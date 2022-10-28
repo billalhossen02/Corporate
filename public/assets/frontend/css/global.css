@@ -1,0 +1,166 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul,
+li,
+a,
+img,
+p,
+h1,
+h2,
+h3,
+h4.h5,
+h6 {
+    margin: 0px;
+    padding: 0px;
+}
+a:hover{
+    text-decoration: none !important;
+}
+
+b{
+    text-decoration: dotted;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+.input_control::placeholder {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 200;
+}
+
+.section_padding {
+    padding: 50px 0px;
+}
+
+.section_title {
+    max-width: 885px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.title_top_heading {
+    font-size: 36px;
+    line-height: 48px;
+    color: var(--heading);
+    margin-bottom: 14px;
+    font-weight: 100;
+}
+
+.title_tex_content {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+    margin-top: 16px;
+    font-weight: 300;
+}
+
+:root {
+    --bgColor: #f7f6f5;
+    --primaryColor: #fff;
+    --subColor: #5f5753;
+    --mainColor: #ae0a46;
+    --lastColor: #7e0733;
+    --topHover: #6f062d;
+    --navColor: #3e332d;
+    --heading: #222222;
+}
+
+/* home title */
+
+
+.business_seftion_content{}
+
+.home_title{
+    max-width: 760px;
+    width: 100%;
+    margin: 0px auto 30px;
+
+}
+
+.home_title_heading {
+    font-size: 30px;
+    color: var(--heading);
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.home_title_heading span{
+    position: relative;
+}
+
+.home_title_heading span::after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 20px;
+    background: #9f177a;
+    top: -5px;
+    left: 0px;
+}
+
+.home_title_text {
+    color: var(--navColor);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+/* home title */
+
+a#scrollUp {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background:#AE0A46;
+    color: #fff;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    display: grid;
+    place-content: center;
+}
+
+.backPage {
+    background: #AE0A46;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: fixed;
+    right: 21px;
+    bottom: 73px;
+    transform: translateY(-50%);
+}
+
+.backPage i{
+    color: #fff;;
+    transform: rotate(-90deg) translate(-50%, -50%);
+    position: absolute;
+    top: 15%;
+    left: 50%;
+
+
+}
