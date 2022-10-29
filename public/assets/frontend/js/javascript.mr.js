@@ -50,7 +50,7 @@ for (i = 0; i < coll.length; i++) {
       content.style.maxHeight = null;
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
-    } 
+    }
   });
 }
 
@@ -157,7 +157,7 @@ $(".toggle").on("click", function(e){
 */
 //-------------
 
-// $('#click_advance').click(function() {
-//     $('#display_advance').toggle('1000');
-//     $("i", this).toggleClass("fa-solid fa-chevron-left fa-solid fa-align-left");
-// });
+$('#click_advance').click(function() {
+    $('#display_advance').toggle('1000');
+    $("i", this).toggleClass("fa-solid fa-chevron-left fa-solid fa-align-left");
+});

@@ -31,7 +31,7 @@ $(document).ready(function(){
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 .toggle.expanded{
     position: absolute;
@@ -57,10 +57,10 @@ $(".toggle").on("click", function(e){
 */
 //-------------
 
-// $('#click_advance').click(function() {
-//     $('#display_advance').toggle('1000');
-//     $("i", this).toggleClass("fa-solid fa-chevron-left fa-solid fa-align-left");
-// });
+$('#click_advance').click(function() {
+    $('#display_advance').toggle('1000');
+    $("i", this).toggleClass("fa-solid fa-chevron-left fa-solid fa-align-left");
+});
 
 //-------------
 
@@ -83,6 +83,6 @@ $("#display_advance").show();
 $(".fa-align-left").hide();
 if ($( "#cls" ).hasClass('col-xl-12')) {
 $( "#cls" ).removeClass( 'col-xl-12');
-} 
+}
 
 }

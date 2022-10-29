@@ -25,7 +25,7 @@ use Facade\FlareClient\Http\Response;
  }
 
  function categories(){
-    $categories = Category::groupBy('sub_category')->latest()->get();
+    $categories = Category::groupBy('category')->latest()->get();
     return $categories;
  }
 

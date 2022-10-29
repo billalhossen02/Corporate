@@ -428,4 +428,8 @@ class PageBuilderController extends Controller
         $brands = Brand::all();
         return view('backend.pagebuilder.choose', compact('brands'));
     }
+    public function brandDelete($id){
+        PageBuilder::find($id)->delete();
+        return redirect()->back();
+    }
 }

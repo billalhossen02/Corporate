@@ -52,7 +52,7 @@ class HomePageBuilderController extends Controller
 
         $story4 = Client::where('title', $request->story4)->first();
         $dat->story4_id = $story4->id;
-       
+
         $story5 = Client::where('title', $request->story5)->first();
         $dat->story5_id = $story5->id;
 
@@ -78,7 +78,7 @@ class HomePageBuilderController extends Controller
         $dat->success3_id = $success3->id;
 
         $dat->save();
-    
+
         return redirect()->route('allpage');
 
         }
@@ -86,5 +86,4 @@ class HomePageBuilderController extends Controller
             HomePageBuilder::find($id)->delete();
             return back();
         }
-
 }

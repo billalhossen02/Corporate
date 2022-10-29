@@ -23,71 +23,6 @@ use App\Http\Controllers\HomePageBuilderController;
 use App\Http\Controllers\CategoryPageBuilderController;
 
 
-Route::get('/allsoftware_t', function () {
-    return view('frontend.allsoftware_t');
-});
-
-Route::get('/CommonhardwareShop', function () {
-    return view('frontend.CommonhardwareShop');
-});
-
-Route::get('/popup', function () {
-    return view('frontend.popup');
-});
-
-Route::get('/soft', function () {
-    return view('frontend.software');
-});
-
-Route::get('/industryall', [IndustryController::class, 'view_industries'])->name('view_industries');
-
-
-Route::get('/service', function () {
-    return view('frontend.service');
-});
-
-Route::get('/blogs', [BlogController::class, 'blogs'])->name('blogs');
-
-//Success
-Route::get('/single_solution', function () {
-    return view('frontend.blogs.single_solution');
-});
-
-//All Blogs
-Route::get('/blogs', [BlogController::class, 'blogs'])->name('blogs');
-//Show Create Form
-Route::get('/blogs/create', [BlogController::class, 'create']);
-//Store Blog Data
-Route::post('/blogs/add', [BlogController::class, 'store'])->name('addblog');
-//Show Edit Form
-Route::get('/blogs/edit/{blog}', [BlogController::class, 'edit'])->name('edit');
-//Update Listing
-Route::put('blogs/{blog}', [BlogController::class, 'update']);
-//Update Delete
-Route::delete('blogs/{blog}', [BlogController::class, 'destroy']);
-//Single Blogs
-Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('single');
-// Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('single');
-Route::get('/story/{id}', [BlogController::class, 'storyShow']);
-
-
-//Blogs Backend
-// All Blogs Backend
-Route::get('/admin/blogs', [BlogController::class, 'blogs_backend'])->name('blogs_backend');
-//Show Create Form Backend
-Route::get('/admin/blogs/create', [BlogController::class, 'blogs_create_backend'])->name('blogs_create_backend');
-Route::post('/add/solution', [BlogController::class, 'addSolution'])->name('addSolution');
-
-//Success
-//View all successes
-Route::get('/successes', [SuccessController::class, 'view_success'])->name('view_success');
-//Show Edit Form
-Route::get('/successes/edit/{success}', [SuccessController::class, 'edit_success']);
-//Update Success
-Route::put('successes/{success}', [SuccessController::class, 'update_success']);
-//Single Success
-Route::get('/Successes/{Success}', [SuccessController::class, 'show_success'])->name('show_success');
-
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/dynamic_dependent/fetch', [HomeController::class, 'fetch'])->name('dynamicdependent.fetch');
@@ -226,6 +161,8 @@ Route::get('allpage', [PageBuilderController::class, 'allPage'])->name('allpage'
 Route::get('choose', [PageBuilderController::class, 'choose']);
 Route::get('pagebuilder/brand', [PageBuilderController::class, 'brand']);
 Route::get('/hardware/{brand}', [HomeController::class, 'hardware']);
+Route::get('pagebuilder/brand/delete/{id}', [PageBuilderController::class, 'brandDelete']);
+
 // Route::get('pagebuilder/{id}',[PageBuilderController::class,'delete']);
 // Route::get('pagebuilder/edit/{id}',[PageBuilderController::class,'edit']);
 // Route::post('pagebuilder/update/{id}',[PageBuilderController::class,'update'])->name('updatePage');
@@ -235,7 +172,7 @@ Route::get('/hardware/{brand}', [HomeController::class, 'hardware']);
 
 Route::get('pagebuilder/home', [HomePageBuilderController::class, 'home']);
 Route::post('pagebuilder/home', [HomePageBuilderController::class, 'addPageHome'])->name('addPageHome');
-// Route::get('pagebuilder/home/{id}',[HomePageBuilderController::class,'delete']);
+Route::get('pagebuilder/home/{id}',[HomePageBuilderController::class,'delete']);
 
 
 //Page Builder Category
@@ -243,6 +180,7 @@ Route::post('pagebuilder/home', [HomePageBuilderController::class, 'addPageHome'
 Route::get('pagebuilder/category', [CategoryPageBuilderController::class, 'category']);
 Route::post('pagebuilder/category', [CategoryPageBuilderController::class, 'addPageCategory'])->name('addPageCategory');
 Route::get('category.html/{category}', [HomeController::class, 'category'])->name('category');
+Route::get('pagebuilder/category/delete/{id}', [CategoryPageBuilderController::class, 'categoryDelete']);
 
 
 
@@ -250,24 +188,25 @@ Route::get('client/dashboard', [ClientController::class, 'dashboard']);
 Route::get('order/track', [ClientController::class, 'track']);
 
 
+Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('/contact/location', [HomeController::class, 'location']);
+
+
+
 //error
 
 Route::get('coming_soon', function () {
     return view('frontend.error.coming_soon');
 });
-
 Route::get('404', function () {
     return view('frontend.error.error');
 });
-
 Route::get('privacy', function () {
     return view('frontend.footer.privacy');
 });
-
 Route::get('terms', function () {
     return view('frontend.footer.terms');
 });
-
 Route::get('web-accessibility', function () {
     return view('frontend.footer.web');
 });
@@ -277,7 +216,60 @@ Route::get('sitemap', function () {
 Route::get('tech_glossary', function () {
     return view('frontend.footer.tech_glossary');
 });
+Route::get('/allsoftware_template', function () {
+    return view('frontend.product.allsoftware_template');
+});
+Route::get('/common_hardware_shop', function () {
+    return view('frontend.common_hardware.common_hardware');
+});
+Route::get('/popup', function () {
+    return view('frontend.popup');
+});
+Route::get('/service', function () {
+    return view('frontend.service.service');
+});
+Route::get('/single_solution', function () {
+    return view('frontend.blogs.single_solution');
+});
 
 
-Route::get('/contact', [HomeController::class, 'contact']);
-Route::get('/contact/location', [HomeController::class, 'location']);
+Route::get('/industryall', [IndustryController::class, 'view_industries'])->name('view_industries');
+Route::get('/blogs', [BlogController::class, 'blogs'])->name('blogs');
+
+
+//All Blogs
+Route::get('/blogs', [BlogController::class, 'blogs'])->name('blogs');
+//Show Create Form
+Route::get('/blogs/create', [BlogController::class, 'create']);
+//Store Blog Data
+Route::post('/blogs/add', [BlogController::class, 'store'])->name('addblog');
+//Show Edit Form
+Route::get('/blogs/edit/{blog}', [BlogController::class, 'edit'])->name('edit');
+//Update Listing
+Route::put('blogs/{blog}', [BlogController::class, 'update']);
+//Update Delete
+Route::delete('blogs/{blog}', [BlogController::class, 'destroy']);
+//Single Blogs
+Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('single');
+// Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('single');
+Route::get('/story/{id}', [BlogController::class, 'storyShow']);
+
+
+//Blogs Backend
+// All Blogs Backend
+Route::get('/admin/blogs', [BlogController::class, 'blogs_backend'])->name('blogs_backend');
+//Show Create Form Backend
+Route::get('/admin/blogs/create', [BlogController::class, 'blogs_create_backend'])->name('blogs_create_backend');
+Route::post('/add/solution', [BlogController::class, 'addSolution'])->name('addSolution');
+
+//Success
+//View all successes
+Route::get('/successes', [SuccessController::class, 'view_success'])->name('view_success');
+//Show Edit Form
+Route::get('/successes/edit/{success}', [SuccessController::class, 'edit_success']);
+//Update Success
+Route::put('successes/{success}', [SuccessController::class, 'update_success']);
+//Single Success
+Route::get('/Successes/{Success}', [SuccessController::class, 'show_success'])->name('show_success');
+
+

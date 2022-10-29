@@ -21,8 +21,8 @@
                                     <ul>
                                         <li>
                                             <a href="#">
-                                                <img class="pull-left m-r-10 avatar-img"
-                                                    src="assets/backend/images/avatar/3.jpg" alt="" />
+                                                {{-- <img class="pull-left m-r-10 avatar-img"
+                                                    src="assets/backend/images/avatar/3.jpg" alt="" /> --}}
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>
@@ -33,8 +33,8 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img class="pull-left m-r-10 avatar-img"
-                                                    src="assets/backend/images/avatar/3.jpg" alt="" />
+                                                {{-- <img class="pull-left m-r-10 avatar-img"
+                                                    src="assets/backend/images/avatar/3.jpg" alt="" /> --}}
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>
@@ -45,8 +45,8 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img class="pull-left m-r-10 avatar-img"
-                                                    src="assets/backend/images/avatar/3.jpg" alt="" />
+                                                {{-- <img class="pull-left m-r-10 avatar-img"
+                                                    src="assets/backend/images/avatar/3.jpg" alt="" /> --}}
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>
@@ -58,8 +58,8 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img class="pull-left m-r-10 avatar-img"
-                                                    src="assets/backend/images/avatar/3.jpg" alt="" />
+                                                {{-- <img class="pull-left m-r-10 avatar-img"
+                                                    src="assets/backend/images/avatar/3.jpg" alt="" /> --}}
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>
@@ -91,8 +91,8 @@
                                     <ul>
                                         <li class="notification-unread">
                                             <a href="#">
-                                                <img class="pull-left m-r-10 avatar-img"
-                                                    src="assets/backend/images/avatar/1.jpg" alt="" />
+                                                {{-- <img class="pull-left m-r-10 avatar-img"
+                                                    src="assets/backend/images/avatar/1.jpg" alt="" /> --}}
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>
@@ -104,8 +104,8 @@
                                         </li>
                                         <li class="notification-unread">
                                             <a href="#">
-                                                <img class="pull-left m-r-10 avatar-img"
-                                                    src="assets/backend/images/avatar/2.jpg" alt="" />
+                                                {{-- <img class="pull-left m-r-10 avatar-img"
+                                                    src="assets/backend/images/avatar/2.jpg" alt="" /> --}}
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>
@@ -117,8 +117,8 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img class="pull-left m-r-10 avatar-img"
-                                                    src="assets/backend/images/avatar/3.jpg" alt="" />
+                                                {{-- <img class="pull-left m-r-10 avatar-img"
+                                                    src="assets/backend/images/avatar/3.jpg" alt="" /> --}}
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>
@@ -130,8 +130,8 @@
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <img class="pull-left m-r-10 avatar-img"
-                                                    src="assets/backend/images/avatar/2.jpg" alt="" />
+                                                {{-- <img class="pull-left m-r-10 avatar-img"
+                                                    src="assets/backend/images/avatar/2.jpg" alt="" /> --}}
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34
                                                         PM</small>

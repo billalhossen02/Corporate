@@ -40,8 +40,8 @@
                                                                 class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"
                                                                     aria-hidden="true"></i>
                                                             </button></a>
-                                                        {{-- <a href="{{ url('pagebuilder/edit/'.$item->id) }}"><button class="btn btn-sm  btn-outline-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>  --}}
-                                                        {{-- <a href="{{ url('pagebuilder/'.$item->id) }}"><button class="btn btn-sm  btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></a>   --}}
+
+                                                        <a href="{{ url('pagebuilder/home/'.$item->id) }}"><button class="btn btn-sm  btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -75,8 +75,10 @@
                                                                 class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"
                                                                     aria-hidden="true"></i>
                                                             </button></a>
-                                                        {{-- <a href="{{ url('pagebuilder/edit/'.$item->id) }}"><button class="btn btn-sm  btn-outline-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>  --}}
-                                                        {{-- <a href="{{ url('pagebuilder/'.$item->id) }}"><button class="btn btn-sm  btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></a>   --}}
+
+                                                            <a href="{{ url('pagebuilder/brand/delete/' . $item->id) }}"><button
+                                                                class="btn btn-sm  btn-outline-danger"><i
+                                                                    class="fa fa-trash" aria-hidden="true"></i></button></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -111,8 +113,7 @@
                                                                 class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"
                                                                     aria-hidden="true"></i>
                                                             </button></a>
-                                                        {{-- <a href="{{ url('pagebuilder/edit/'.$item->id) }}"><button class="btn btn-sm  btn-outline-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>  --}}
-                                                        <a href="{{ url('pagebuilder/category' . $item->id) }}"><button
+                                                        <a href="{{ url('pagebuilder/category/delete/' . $item->id) }}"><button
                                                                 class="btn btn-sm  btn-outline-danger"><i
                                                                     class="fa fa-trash" aria-hidden="true"></i></button></a>
                                                     </td>

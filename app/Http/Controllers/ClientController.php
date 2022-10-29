@@ -48,8 +48,8 @@ class ClientController extends Controller
   return view('backend.client_experience.create');
   }
   public function clientE(Request $request){
-    $image = $request->image; 
-    $imageName = time() . '.' . $image->extension(); 
+    $image = $request->image;
+    $imageName = time() . '.' . $image->extension();
     $image->storeAs('Client', $imageName);
     DB::table('clients')->insert([
       'title' => $request->title,
@@ -64,7 +64,11 @@ class ClientController extends Controller
     return view('frontend.client.dashboard');
   }
   public function track(){
+    if(Auth::check()){
     $orders = Order::with('orderDetails')->where('user_id',Auth::user()->id)->get();
+    return view('frontend.client.track',compact('orders'));
+    }
+    $orders = null;
     return view('frontend.client.track',compact('orders'));
   }
 }

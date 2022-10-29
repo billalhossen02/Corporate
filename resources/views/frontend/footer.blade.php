@@ -15,7 +15,7 @@
                     <!-- text -->
                     <p>Sign up to receive the IT content that matters most to you. You can update your preferences or unsubscribe any time.</p>
                     <!-- button -->
-                   <a href="{{ url('newsletter') }}"><button style="font-size: 14px"  class="common_button2">Sign up for our newsletter</button></a>   
+                   <a href="{{ url('newsletter') }}"><button style="font-size: 14px"  class="common_button2">Sign up for our newsletter</button></a>
                 </div>
 
                 <!-- item -->
@@ -40,9 +40,9 @@
                     <!-- nav list -->
                     <div class="footer_nav_list">
                         <ul>
-                            <li><a href="">Products</a></li>
+                            <li><a href="{{ route('filter') }}">Products</a></li>
                             <li><a href="">Services</a></li>
-                            <li><a href="">Solutions</a></li>
+                            <li><a href="{{ route('blogs') }}">Solutions</a></li>
                             <li><a href="">Industry</a></li>
                             <li><a href="">TechViews</a></li>
                         </ul>
@@ -70,9 +70,9 @@
                         <ul>
                             <li><a href="{{ url('/contact') }}">Contact us</a></li>
                             <li><a href="">FAQs</a></li>
-                            <li><a href="">Order Helps</a></li>
-                            <li><a href="">Order Tracks</a></li>
-                            <li><a href="">Supports</a></li>
+                            <li><a href="{{ url('order/track') }}">Order Helps</a></li>
+                            <li><a href="{{ url('order/track') }}">Order Tracks</a></li>
+                            <li><a href="{{ url('/contact') }}">Supports</a></li>
                     </div>
                 </div>
             </div>
@@ -114,10 +114,10 @@
 
         <!--==============Cookises Modals================-->
         <section class="cookises_settings_wrapper">
-        
+
             <input type="checkbox" id="show_cookies">
             <!-- <label for="show_cookies">View Form</label> -->
-            
+
             <!--Content Wrapper-->
             <div class="cookises_settings_pop">
                 <label for="show_cookies" class="close-btn fas fa-times" title="close"></label>
@@ -134,24 +134,24 @@
                         <button class="tablinks" onclick="openCity(event, 'Functional')">Functional cookies</button>
                         <button class="tablinks" onclick="openCity(event, 'Targeting')">Targeting cookies</button>
                     </div>
-                    
+
                     <div id="Privacy" class="tab_cookises_tabcontent">
                         <h5>Your privacy</h5>
                         <p>When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer. You can get more information by going to our Privacy Policy or Statement in the footer of the website.</p>
                     </div>
-                    
+
                     <div id="Strictly" class="tab_cookises_tabcontent">
                         <div class="d-flex justify-content-between">
                             <h5>Strictly necessary cookies</h5>
                             <h5 style="color: #ae0a46; display: inline;">Always active</h5>
                         </div>
-                        
+
                         <p>These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.    You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information.</p>
-    
+
                         <a href="#">Cookies details</a>
-                    
+
                     </div>
-                    
+
                     <div id="Performance" class="tab_cookises_tabcontent">
                         <div class="d-flex justify-content-between">
                             <h5>Performance cookies</h5>
@@ -160,12 +160,12 @@
                                 <span class="slider round"></span>
                             </label>
                         </div>
-                        
+
                         <p>These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. Most of these cookies collect and process aggregated (anonymized) information without identifying individuals. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.</p>
-    
+
                         <a href="#" onclick="switchVisible();" value="Click" > Cookies details</a>
                     </div>
-                    
+
                     <div id="Functional" class="tab_cookises_tabcontent">
                         <div class="d-flex justify-content-between">
                             <h5>Functional cookies</h5>
@@ -174,12 +174,12 @@
                                 <span class="slider round"></span>
                             </label>
                         </div>
-                        
+
                         <p>These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages.    If you do not allow these cookies then some or all of these services may not function properly.</p>
-    
+
                         <a href="#" onclick="switchVisible();" value="Click" > Cookies details</a>
                     </div>
-                    
+
                     <div id="Targeting" class="tab_cookises_tabcontent">
                         <div class="d-flex justify-content-between">
                             <h5>Targeting cookies</h5>
@@ -188,9 +188,9 @@
                                 <span class="slider round"></span>
                             </label>
                         </div>
-                        
+
                         <p>These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites.    They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.</p>
-    
+
                         <a href="#" onclick="switchVisible();" value="Click" > Cookies details</a>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                             <button class="cookie_filter_icon"><i class="fa-solid fa-filter fa-xl"></i></button>
-                        </div>     
+                        </div>
                     </div>
                     <div class="cookie_list_content">
                         <div class="cookie_list_content_item">
@@ -237,7 +237,7 @@
                                         <div class="cookie_veiw_title">Targeting cookies</div>
                                     </li>
                                 </ul>
-    
+
                                 <!--Item-->
                                 <ul>
                                     <li>
@@ -288,7 +288,7 @@
                                         <div class="cookie_veiw_title">Targeting cookies</div>
                                     </li>
                                 </ul>
-    
+
                                 <!--Item-->
                                 <ul>
                                     <li>
@@ -317,7 +317,7 @@
                                     </li>
                                 </ul>
                             </div><br>
-    
+
                             <!--====///First///====-->
                             <button class="collapsible">exchange.mediavine.com</button>
                             <div class="content">
@@ -344,7 +344,7 @@
                                         <div class="cookie_veiw_title">Targeting cookies</div>
                                     </li>
                                 </ul>
-    
+
                                 <!--Item-->
                                 <ul>
                                     <li>
@@ -395,7 +395,7 @@
                                         <div class="cookie_veiw_title">Targeting cookies</div>
                                     </li>
                                 </ul>
-    
+
                                 <!--Item-->
                                 <ul>
                                     <li>
@@ -424,11 +424,11 @@
                                     </li>
                                 </ul>
                             </div><br>
-    
+
                         </div>
-                        
-                        
-                    </div>            
+
+
+                    </div>
                 </div>
                 <div class="modal_footer_cookises">
                     <div class="d-flex justify-content-between">
@@ -436,7 +436,7 @@
                         <!--Show & Hide butoon-->
                         <button class="btn_footer_cookises" id="btn_show"><strong> Allow cookises</strong></button>
                     </div>
-    
+
                     <div class="text_footer_cookises">
                         <p>Powered by<span class="text-success h6">OneTrust</span></p>
                     </div>

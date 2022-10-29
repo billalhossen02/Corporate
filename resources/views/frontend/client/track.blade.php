@@ -134,6 +134,7 @@
                 </section>
                 <!--Order Tracking End-->
                 <!--Order Details Start-->
+                @if($orders !=null)
                 <section class="client_db_oredr_details">
                     <div class="d-flex justify-content-center mb-4">
                         <h2>Order Details</h2>
@@ -168,17 +169,17 @@
                                         <td>{{ $item->total_amount }}</td>
                                         <td>
                                             @if ($item->delivery_status == 'Processing')
-                                            <a class="btn_action bg-primary">{{ $item->delivery_status }}</a> 
+                                            <a class="btn_action bg-primary">{{ $item->delivery_status }}</a>
                                             @elseif ($item->delivery_status == 'Shipped')
-                                            <a class="btn_action bg-secondary">{{ $item->delivery_status }}</a> 
+                                            <a class="btn_action bg-secondary">{{ $item->delivery_status }}</a>
                                             @elseif ($item->delivery_status == 'Delivered')
-                                            <a class="btn_action btn-success">{{ $item->delivery_status }}</a> 
+                                            <a class="btn_action btn-success">{{ $item->delivery_status }}</a>
                                             @else
-                                            <a class="btn_action btn-warning">{{ $item->delivery_status }}</a> 
+                                            <a class="btn_action btn-warning">{{ $item->delivery_status }}</a>
                                             @endif
-                                        
+
                                         </td>
-                                        <td> 
+                                        <td>
                                            @if ($item->payment_status == 'Unpaid')
                                            <a class="btn_action bg-danger">{{ $item->payment_status }}</a>
                                            @elseif($item->payment_status =='Checking')
@@ -187,10 +188,10 @@
                                            <a class="btn_action bg-success">{{ $item->payment_status }}</a>
                                            @else
                                            <a class="btn_action bg-warning">{{ $item->payment_status }}</a>
-                                           @endif 
+                                           @endif
                                         </td>
                                         <td>
-                                            
+
                                             @if($item->payment_status == 'Unpaid')
                                             <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer; color:rgba(241, 8, 43, 0.781)">
                                                Payment Info
@@ -244,11 +245,15 @@
                         </tbody>
                     </table>
                 </section>
+                @endif
                 <!--Order Details End-->
             </div>
         </div>
     </div>
     <!--======================================-->
+
+    @include('frontend.footer')
+
     <!-- jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 

@@ -2721,7 +2721,7 @@ tbody tr td {
   color: #868e96;
 }
 tbody tr td:last-child {
-  text-align: center;
+  text-align: right;
 }
 /* }
 .table > tbody > tr > td,

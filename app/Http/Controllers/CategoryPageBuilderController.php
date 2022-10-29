@@ -16,7 +16,7 @@ class CategoryPageBuilderController extends Controller
         $storageCables = Category::where('sub_sub_category','Storage cables')->get();
         $powerCables = Category::where('sub_sub_category','Power cables')->get();
         $categories = Category::groupBy('sub_category')->get();
-       
+
         return view('backend.pagebuilder.category', compact('categories','displayCables','networkCables','adapters','storageCables','powerCables'));
     }
     public function addPageCategory(Request $request){
@@ -85,5 +85,9 @@ class CategoryPageBuilderController extends Controller
         $dat->save();
 
         return redirect()->route('allpage');
+    }
+    public function categoryDelete($id){
+        CategoryPageBuilder::find($id)->delete();
+        return redirect()->back();
     }
 }
