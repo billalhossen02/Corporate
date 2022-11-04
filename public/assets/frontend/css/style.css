@@ -69,6 +69,433 @@
 
 /*-----End-----*/
 
+
+/*===================================*/
+/*====================
+        Tech Deals Page
+        =================*/
+/*==================================*/
+
+.tech_deals_header {
+    /* background-image: url("../images/buy-category-hero.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0px;
+}
+
+.tech_deals_header h1 {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    font-weight: 100;
+}
+
+.tech_deals_header h3 {
+    text-align: center;
+    font-size: 18px;
+    line-height: 44px;
+    color: rgb(255, 252, 252);
+    padding: 0% 10%;
+    font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.search_all_tech_deals_btn {
+    padding: 20px 40px;
+    cursor: pointer;
+    font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    display: inline-block;
+    background-color: #ae0a46;
+    color: #fff;
+}
+
+.search_all_tech_deals_btn:hover {
+    background-color: #880736;
+    color: white;
+    transition: .3s;
+}
+
+.shop_refurbished_btn {
+    padding: 20px 40px;
+    cursor: pointer;
+    font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    display: inline-block;
+    background-color: #fff;
+    color: #ae0a46;
+}
+
+.shop_refurbished_btn:hover {
+    background-color: #5f5753;
+    color: white;
+    transition: .3s;
+}
+.tech_deals_featured_item_title {
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.tech_deals_featured_item_title h3 {
+    font-family: lato;
+    color: #383d41;
+}
+
+.trust_refurbished_title{
+    text-align: center;
+}
+.trust_refurbished_title a{
+    color: var(--crimson);
+}
+.trust_refurbished_title a:hover{
+    color: var(--dark-crimson);
+}
+.trust_refurbished_title h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: lato;
+    color: #383d41;
+}
+
+
+
+/*-------*/
+.tech_deals_thumbnail {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    max-height: 120px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+.tech_deals_thumbnail img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.tech_deals_content_name{
+    margin-bottom: 10px;
+    color: #222;
+    font-family: "allumi-2-std", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.tech_deals_content_name:hover {
+    color: #7a0631;
+}
+
+.tech_deals_item_price {
+    margin-bottom: 10px;
+}
+
+.tech_deals_product_item_price {
+    margin-bottom: 10px;
+}
+.product_item_price span {
+    margin-bottom: 10px;
+}
+
+.tech_deals_shop_btn {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #fff;
+    color: #ae0a46;
+    border: 2px solid;
+    border-color: #5f5753;
+    font-size: 16px;
+    line-height: 15px;
+    transition: all linear 0.3s;
+    font-weight: bold;
+}
+
+.tech_deals_shop_btn:hover {
+    background-color: #5f5753;
+    color: #fff;
+    transition: all linear 0.3s;
+}
+.tech_deals_title_topline{
+    width: 10.0%;
+    margin: 0 auto 10px;
+    height: 5px;
+    background-color: #9f177a !important;
+    border: none;            
+}
+/*--------*/
+.purchased_warranty {
+    /* background-image: url(../images/help-background-imges.jpg); */
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 0px;
+}
+
+.purchased_warranty h2 {
+    text-align: justify;
+    color: white;
+    font-size: 32px;
+    font-weight: 100;
+}
+
+/*===============================================*/
+/*========================
+           Feedback Page
+        ==========================*/
+/*================================================*/
+  .feedbacksidebar {
+    height: 55%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 20%;
+    right: -18px;
+    background-color: rgb(237, 237, 237);
+    border-top: 2px solid rgb(166, 166, 166);
+    border-right: none;
+    border-bottom: 2px solid rgb(166, 166, 166);
+    border-left: 2px solid rgb(166, 166, 166);
+    overflow-x: hidden;
+    transition: 0.5s;
+    bottom: 20%;
+  }
+  
+  .feedbacksidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .feedbacksidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .openbtnfeedback {
+    font-size: 16px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 50%;
+    right: -40px;
+    background-color: var(--crimson);
+    color: white;
+    padding: 5px 12px;
+    border: none;
+    z-index: 1;
+    transition: 0.5s;
+    transform: rotate(-90deg);
+  }
+  
+  .openbtnfeedback:hover {
+    background-color: var(--dark-crimson);
+  }
+  .openbtnfeedback:focus {
+    outline: none;
+    border: none;
+  }
+  #feedback_btn {
+    transition: margin-left .5s;
+  }
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  
+  @media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
+  /*---- Feedback Content -----*/
+  .feedback_header_logo{
+    position: relative;
+    padding: 10px 5px 10px 10px;
+  }
+  .close_feedback{
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  .close_feedback:focus{
+    outline: none;
+    border: none;
+    background: none;
+  }
+  .modal_logo_feedback{
+    border-bottom: linear-gradient(90deg, #ae0a46, #a80b6e 25%, #582873 75%);
+  }
+  .modal_logo_feedback img{
+    width: 65px;
+  }
+  .feedback_continue_btn{
+    background: var(--crimson);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    margin: 40px 10px 20px 0px;
+    float: right;
+  }
+  .feedback_details p{
+    padding: 10px 5px 10px 10px;
+    color: #222;
+  }
+  .feedback_continue_btn:hover{
+    background: var(--dark-crimson);
+  }
+  .feedback_continue_btn:focus{
+    outline: none;
+    border: none;
+  }
+/*-===// Checkbox  Details //===-*/
+  .checkbox_wrapper{
+    background-color: #ccc;
+    padding: 8px 15px 1px 15px;
+    margin-bottom: 10px;
+  }
+.feedback_details_checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .feedback_details_checkbox input {
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border-radius: 12px;
+  }
+  .checkmark_feedback {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 23px;
+    width: 23px;
+    background-color: #ccc;
+    border-radius: 5px;
+    border: 1px solid #6a6a6a;
+  }
+  .feedback_details_checkbox:hover input ~ .checkmark_feedback {
+    background-color: #ccc;
+  }
+  .feedback_details_checkbox input:checked ~ .checkmark_feedback {
+    background-color: var(--crimson);
+    border-radius: 5px;
+  }
+  .checkmark_feedback:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 1px solid silver;
+  }
+  .feedback_details_checkbox input:checked ~ .checkmark_feedback:after {
+    display: block;
+  }
+  .feedback_details_checkbox .checkmark_feedback:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+  /*Round Checkmark*/
+  .checkrounded_wrapper{
+    background-color: #ccc;
+    margin-bottom: 10px;
+  }
+.feedback_details_checkrounded {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .feedback_details_checkrounded input {
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    border-radius: 100%;
+  }
+  .feedback_details_checkrounded p{
+    text-align: center;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+  .checkmark_rounded {
+    position: absolute;
+    top: 36px;
+    left: 47%;
+    height: 28px;
+    width: 28px;
+    background-color: #ccc;
+    border-radius: 100%;
+    border: 1px solid #6a6a6a;
+  }
+  .feedback_details_checkrounded:hover input ~ .checkmark_rounded {
+    background-color: #ccc;
+  }
+  .feedback_details_checkrounded input:checked ~ .checkmark_rounded {
+    background-color: var(--crimson);
+    border-radius: 100%;
+  }
+  .checkmark_rounded:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 1px solid silver;
+  }
+  .feedback_details_checkrounded input:checked ~ .checkmark_rounded:after {
+    display: block;
+  }
+  .feedback_details_checkrounded .checkmark_rounded:after {
+    left: 10px;
+    top: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
 /*===============================================*/
 /*========================
            Cookies Settings page

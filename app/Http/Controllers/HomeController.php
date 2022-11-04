@@ -62,7 +62,7 @@ class HomeController extends Controller
     public function customLogout()
     {
         Auth::logout();
-        return redirect()->route('home');
+        return redirect()->route('home')->withSuccess('You have Successfully Logout');
     }
     public function contactUs(Request $request)
     {
@@ -106,12 +106,12 @@ class HomeController extends Controller
         if (Auth::attempt($credentials)) {
             if (Auth::user()->email_verified_at == null) {
                 Auth::logout();
-                return redirect("login")->withSuccess('Oppes! You have To Verified Your Email');
+                return redirect("login")->withWarning('Oppes! You have To Verified Your Email');
             }
             return redirect()->intended('/')
                 ->withSuccess('You have Successfully loggedin');
         }
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return redirect("login")->withWarning('Oppes! You have entered invalid credentials');
     }
     public function forgot()
     {
@@ -447,7 +447,7 @@ class HomeController extends Controller
     }
     public function category($category)
     {
-        $featuredCables = Product::where('sub_category','Cables')->get();
+        $featuredCables = Product::where('sub_category', 'Cables')->get();
         $brands = Brand::all();
         $data = CategoryPageBuilder::where('category', $category)->with('cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'cat6', 'cat7', 'cat8', 'cat9', 'cat10', 'cat11', 'cat12', 'cat13', 'cat14', 'cat15', 'cat16', 'cat17', 'cat18', 'cat19', 'cat20')->first();
         return view('frontend.category.category', ['data' => $data, 'brands' => $brands, 'featuredCables' => $featuredCables]);
@@ -462,6 +462,9 @@ class HomeController extends Controller
     }
     public function tech()
     {
-        return view('frontend.tech.deal');
+        $techDeal = Product::where('product_type', 'deal')->get();
+        $refurbished = Product::where('product_type', 'refurbished')->get();
+        $categories = Category::groupBy('sub_category')->get();
+        return view('frontend.tech.deal', compact('techDeal', 'categories', 'refurbished'));
     }
 }

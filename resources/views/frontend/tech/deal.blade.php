@@ -1,449 +1,337 @@
 @extends('frontend.master')
-@include('frontend.header')
 @section('content')
-    <!-- banner single page start -->
-    <section class="banner_single_page">
+    @include('frontend.header')
+
+    <!--========Header Title==========-->
+    <section class="tech_deals_header" style="background-image:url('{{ asset('assets/frontend/image/rename.jpg') }}');
+    ">
         <div class="container">
-            <div class="single_banner_content" style="max-width: 800px">
-                <!-- image -->
-                <div class="single_banner_image">
-                    <img src="assets/image/single page/banner/microsoft-surface.png" alt="">
+            <h1>Technology deals</h1>
+            <h3>Browse and save on exclusive tech deals from Insight. We offer deep discounts on electronics, devices and
+                software, including refurbished and open-box offers.</h3>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-2"></div>
+                <!--BUTTON START-->
+                <div class="col-lg-3 col-sm-12 d-flex justify-content-center mb-4">
+                    <a class="search_all_tech_deals_btn" href="#tech">Explore tech deals</a>
                 </div>
-                <!-- heading -->
-                <h1 class="single_banner_heading">Technology deals</h1>
-                <p class="single_banner_text">Browse and save on exclusive tech deals from Insight. We offer deep discounts
-                    on electronics, devices and software, including refurbished and open-box offers.</p>
-                <!-- single banner button -->
-                <div class="single_buttton_wrapper">
-                    <a href="" class="single_banner_button">Explore tech deals</a>
-                    <a href="" class="single_banner_button single_banner_button2">Shop refurbished</a>
+                <div class="col-lg-3 col-sm-12 d-flex justify-content-center mb-4">
+                    <a class="shop_refurbished_btn " href="#refurb">Shop refurbished</a>
+                </div>
+                <!--BUTTON END-->
+                <div class="col-lg-2"></div>
+                </span>
+
+            </div>
+        </div>
+
+    </section>
+    <!----------Header Title End--------->
+
+
+    <!--=======Featured deals products=======-->
+    <section class="container" id="tech">
+        <div class="tech_deals_section_content">
+            <!-- section title -->
+            <div class="tech_deals_featured_item_title">
+                <h3>Featured deals</h3>
+                <p>Discover our latest discounts and limited-time offers on the technology brands and devices your business
+                    trusts.</p>
+            </div>
+            <!-- wrapper -->
+            <div class="row">
+                <!-- product_item -->
+                @foreach ($techDeal as $item)
+                    <div class="col-lg-2 col-md-4 col-sm-6 my-4">
+                        <!-- image -->
+                        <div class="tech_deals_thumbnail">
+                            <img src="{{ asset('storage/Product/' . $item->image) }}" alt="">
+                        </div>
+
+                        <!-- product content -->
+                        <div class="tech_deals_product_item_content">
+                            <a href="{{ route('product', ['id' => $item->id]) }}"
+                                class="tech_deals_content_name">{{ $item->title }}</a>
+
+                            <!-- price -->
+                            <div class="tech_deals_product_item_price">
+                                <span class="price_currency">Mfr #: </span>
+                                <span class="price_currency_value">683J7UT#ABA</span>
+                            </div>
+                            <div class="tech_deals_product_item_price">
+                                <span class="price_currency">USD</span>
+                                <span class="price_currency_value">${{ $item->price }}</span>
+                            </div>
+                            {{-- <div class="tech_deals_product_item_price">
+                                <span class="price_currency">2365</span>
+                                <span class="price_currency_value">In-stock</span>
+                            </div> --}}
+
+                            <!-- button -->
+                            <a href="{{ route('product', ['id' => $item->id]) }}" class="tech_deals_shop_btn">Shop now</a>
+                        </div>
+
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+        </div>
+    </section><br>
+    <hr>
+    <!-- Featured deals Section End -->
+
+
+
+    <!--====== Trust refurbished products========-->
+    <section class="container" id="refurb">
+        <div class="d-flex justify-content-center">
+            <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/microsoft-authorized-refurbisher.png') }}"
+                alt="">
+        </div>
+        <div class="trust_refurbished_title">
+            <h2>Trust Insight for refurbished products.</h2>
+            <p>We offer a range of certified refurbished hardware that <a href="client_stories_blog_insert.html">meets your
+                    business needs at a lower price point.</a> From desktops to notebooks to monitors, our refurbished
+                products deliver the performance, support and customization you depend on. And, as a Microsoft Authorized
+                Refurbisher, we adhere to strict requirements that ensure the quality of our refurbished Microsoft hardware.
+            </p>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <button class="common_button">Learn more about refurbished products</button>
+        </div>
+    </section>
+    <!-----Trust refurbished products End------->
+
+    <!--=======Featured refurbished partners=======-->
+    <section class="container">
+        <div class="tech_deals_section_content">
+            <!-- section title -->
+            <div class="tech_deals_featured_item_title">
+                <h3 class="tech_deals_title_topline"></h3>
+                <h3>Shop featured refurbished partners</h3>
+            </div>
+            <div class="row">
+                <!-- Logo -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- image -->
+                    <div class="tech_deals_thumbnail">
+                        <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/203-trading.png') }}"
+                            alt="">
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- image -->
+                    <div class="tech_deals_thumbnail">
+                        <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/blairtech.png') }}"
+                            alt="">
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- image -->
+                    <div class="tech_deals_thumbnail">
+                        <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/cnb-computers.png') }}"
+                            alt="">
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- image -->
+                    <div class="tech_deals_thumbnail">
+                        <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/im-sourcing-cpo.png') }}"
+                            alt="">
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- image -->
+                    <div class="tech_deals_thumbnail">
+                        <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/joy-systems.png') }}"
+                            alt="">
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- image -->
+                    <div class="tech_deals_thumbnail">
+                        <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/microcad.png') }}"
+                            alt="">
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- image -->
+                    <div class="tech_deals_thumbnail">
+                        <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/stg.png') }}"
+                            alt="">
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <!-- image -->
+                    <div class="tech_deals_thumbnail">
+                        <img src="{{ asset('assets/frontend/image/tech_deals/featured_partners/verified-systems.png') }}"
+                            alt="">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- banner single page end-->
+    <!---Featured refurbished Section End---->
 
-    <!-- techdeals product -->
 
-    <section class="techdeals_section section_padding">
-        <div class="container">
-            <div class="section_title" style="max-width: 1024px">
-                <h3 class="title_top_heading">Featured deals</h3>
-                <p class="title_tex_content">Discover our latest discounts and limited-time offers on the technology brands
-                    and devices your business trusts.</p>
+    <!--=======Featured refurbished products=======-->
+    <section class="container">
+        <div class="tech_deals_section_content">
+            <!-- section title -->
+            <div class="tech_deals_featured_item_title">
+                <h3 class="tech_deals_title_topline"></h3>
+                <h3>Featured refurbished products</h3>
             </div>
-
-            <div class="techdeals_product_wrapper" id="tech_deals_item">
-
-                <!-- item -->
-                <div class="techdeals_product_item" id="">
-                    <!-- thumbnail -->
-                    <div class="techdeals_product_thumbnail">
-                        <img src="assets/frontend/image/brand/tech.jpg" alt="">
-                    </div>
-                    <!-- content -->
-                    <div class="techdeals_product_content">
-                        <p class="techdeals_product_title">HP EliteBook 840 G8 Notebook - 14" - Core i5 1145G7 - vPro - 16
-                            GB RAM - 256 GB SSD - US</p>
-                        <!-- price -->
-                        <p class="techdeals_product_price">
-                            <span>$449.99</span>
-                            <span>USD </span>
-                        </p>
-                        <!-- button -->
-                        <div class="techdeals_product_button">
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- techdeals product end -->
-
-    <!-- techdeals refurbished  -->
-
-    <div class="techRefer_section section_padding">
-        <div class="container">
-            <div class="single_banner_content" style="max-width: 100%;">
-                <!-- image -->
-                <div class="single_banner_image">
-                    <img src="assets/frontend/image/brand/techdelas.png" alt="">
-                </div>
-                <!-- heading -->
-                <h1 class="single_banner_heading" style="color: #222222; font-size: 34px; line-height: 40px">Trust Insight
-                    for refurbished products.</h1>
-                <p class="single_banner_text" style="color: #3e332d; font-size: 16px;">We offer a range of certified
-                    refurbished hardware that meets your business needs at a lower price point. From desktops to notebooks
-                    to monitors, our refurbished products deliver the performance, support and customization you depend on.
-                    And, as a Microsoft Authorized Refurbisher, we adhere to strict requirements that ensure the quality of
-                    our refurbished Microsoft hardware.</p>
-                <!-- single banner button -->
-                <div class="single_buttton_wrapper">
-                    <a href="" class="single_banner_button single_banner_button2">Learn more about refurbished
-                        products</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- techdeals refurbished  end -->
-
-    <!-- refurbished category -->
-
-    <div class="refur_category section_padding">
-        <div class="container">
-            <div class="refur_category_wrapper" id="refur_category_wrapper">
-
-
-                <div class="refur_category_item">
-
-                    <div class="refur_cateItem_thumbnail">
-                        <img src="assets/frontend/image/brand/refur1.png" alt="">
-                    </div>
-
-                    <div class="refur_cateItem_name">
-                        <a href="#">Refurbished notebooks</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- refurbished category end -->
-
-    <!-- refurbished brand -->
-
-    <div class="refur_brand_section">
-        <div class="container">
-            <!-- title -->
-            <div class="section_title">
-                <h3 class="title_top_heading"
-                    style="font-size: 24px; line-height: 30px;color: #5f5753;font-weight: 500;font-family: monospace; word-spacing: -5px;">
-                    Shop featured refurbished partners</h3>
-            </div>
-            <div class="refur_brand_wrapper" id="refur_brand_wrapper">
-                <!-- item -->
-                <div class="refur_brand_item">
-                    <img src="assets/frontend/image/brand/techbrand.png" alt="">
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- section altra -->
-
-    <div class="product_altra">
-        <div class="container">
-            <div class="section_title">
-                <h3 class="title_top_heading"
-                    style="font-size: 24px; line-height: 30px;color: #5f5753;font-weight: 500;font-family: monospace; word-spacing: -5px;">
-                    Shop featured refurbished partners</h3>
-            </div>
-
-            <div class="product_altra_wrapper">
-
-                <!-- item -->
-                <div class="techdeals_product_item techdeals_product_altra">
-                    <!-- thumbnail -->
-                    <div class="techdeals_product_thumbnail">
-                        <img src="assets/frontend/image/brand/tech.jpg" alt="">
-                    </div>
-                    <!-- content -->
-                    <div class="techdeals_product_content">
-                        <p class="techdeals_product_title"> HP EliteBook 840 G8 Notebook - 14 " - Core i5 1145 G7 - vPro -
-                            16 GB RAM - 256 GB SSD - US </p>
-                        <!-- price -->
-                        <p class="techdeals_product_price">
-                            <span>$449.99</span>
-                            <span>USD </span>
-                        </p>
-                        <!-- button -->
-                        <div class="techdeals_product_button">
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- item -->
-                <div class="techdeals_product_item techdeals_product_altra">
-                    <!-- thumbnail -->
-                    <div class="techdeals_product_thumbnail">
-                        <img src="assets/frontend/image/brand/tech.jpg" alt="">
-                    </div>
-                    <!-- content -->
-                    <div class="techdeals_product_content">
-                        <p class="techdeals_product_title"> HP EliteBook 840 G8 Notebook - 14 " - Core i5 1145 G7 - vPro -
-                            16 GB RAM - 256 GB SSD - US </p>
-                        <!-- price -->
-                        <p class="techdeals_product_price">
-                            <span>$449.99</span>
-                            <span>USD </span>
-                        </p>
-                        <!-- button -->
-                        <div class="techdeals_product_button">
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-    <!-- section altra end-->
-
-    <!-- refurbished brand end -->
-
-    <!-- slider -->
-    <section class="popular_product_section section_padding">
-        <!-- container -->
-        <div class="container">
-            <div class="popular_product_section_content">
-                <!-- section title -->
-                <div class="section_title">
-                    <h3 class="title_top_heading">Featured cables</h3>
-                </div>
-                <!-- wrapper -->
-                <div class="populer_product_slider">
-
-                    <!-- product_item -->
-
-                    <div class="product_item">
+            <!-- wrapper -->
+            <div class="row">
+                <!-- product_item -->
+                @foreach ($refurbished as $item)
+                    <div class="col-lg-2 col-md-4 col-sm-6 mx-2">
                         <!-- image -->
-                        <div class="product_item_thumbnail">
-                            <img src="assets/frontend/image/single page/single product/product8.jpg" alt="">
+                        <div class="tech_deals_thumbnail">
+                            <img src="{{ asset('storage/Product/' . $item->image) }}" alt="">
                         </div>
 
                         <!-- product content -->
-                        <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
-                                and mouse set - QWERTY - US - black</a>
+                        <div class="tech_deals_product_item_content">
+                            <a
+                                href="{{ route('product', ['id' => $item->id]) }}"class="tech_deals_content_name">{{ $item->title }}</a>
 
                             <!-- price -->
-                            <div class="product_item_price">
-                                <span class="price_currency">usd</span>
-                                <span class="price_currency_value">$856</span>
+                            <div class="tech_deals_product_item_price">
+                                <span class="price_currency">Mfr #: </span>
+                                <span class="price_currency_value">683J7UT#ABA</span>
                             </div>
+                            <div class="tech_deals_product_item_price">
+                                <span class="price_currency">USD</span>
+                                <span class="price_currency_value">${{ $item->price }}</span>
+                            </div>
+                            {{-- <div class="tech_deals_product_item_price">
+                                <span class="price_currency">2365</span>
+                                <span class="price_currency_value">In-stock</span>
+                            </div> --}}
 
                             <!-- button -->
-                            <a href="" class="product_button">Add to Basket</a>
+                            <a href="{{ route('product', ['id' => $item->id]) }}" class="tech_deals_shop_btn">Shop now</a>
                         </div>
 
                     </div>
-                    <!-- product item -->
+                @endforeach
+
+            </div>
+        </div>
+    </section><br>
+
+    <!-- Featured refurbished Section End -->
 
 
-                    <!-- product_item -->
-
-                    <div class="product_item">
-                        <!-- image -->
-                        <div class="product_item_thumbnail">
-                            <img src="assets/frontend/image/single page/single product/product8.jpg" alt="">
-                        </div>
-
-                        <!-- product content -->
-                        <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
-                                and mouse set - QWERTY - US - black</a>
-
-                            <!-- price -->
-                            <div class="product_item_price">
-                                <span class="price_currency">usd</span>
-                                <span class="price_currency_value">$856</span>
-                            </div>
-
-                            <!-- button -->
-                            <a href="" class="product_button">Add to Basket</a>
-                        </div>
-
+    <!--====Purchased warranty Prodcut======-->
+    <section class="purchased_warranty"
+        style="background-image:url('{{ asset('assets/frontend/image/purchase.jpg') }}');
+    ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-sm-10">
+                    <h2>Every certified refurbished product purchased from Insight includes a one-year warranty.</h2>
+                </div>
+                <div class="col-lg-2 col-sm-2">
+                    <div class="d-flex justify-content-end">
+                        <img class="img-fluid " src="{{ asset('assets/frontend/image/check.png') }}" width="100px"
+                            alt="">
                     </div>
-                    <!-- product item -->
-
-
-                    <!-- product_item -->
-
-                    <div class="product_item">
-                        <!-- image -->
-                        <div class="product_item_thumbnail">
-                            <img src="assets/frontend/image/single page/single product/product9.jpg" alt="">
-                        </div>
-
-                        <!-- product content -->
-                        <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
-                                and mouse set - QWERTY - US - black</a>
-
-                            <!-- price -->
-                            <div class="product_item_price">
-                                <span class="price_currency">usd</span>
-                                <span class="price_currency_value">$856</span>
-                            </div>
-
-                            <!-- button -->
-                            <a href="" class="product_button">Add to Basket</a>
-                        </div>
-
-                    </div>
-                    <!-- product item -->
-
-
-
-                    <!-- product_item -->
-
-                    <div class="product_item">
-                        <!-- image -->
-                        <div class="product_item_thumbnail">
-                            <img src="assets/frontend/image/single page/single product/product10.jpg" alt="">
-                        </div>
-
-                        <!-- product content -->
-                        <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
-                                and mouse set - QWERTY - US - black</a>
-
-                            <!-- price -->
-                            <div class="product_item_price">
-                                <span class="price_currency">usd</span>
-                                <span class="price_currency_value">$856</span>
-                            </div>
-
-                            <!-- button -->
-                            <a href="" class="product_button">Add to Basket</a>
-                        </div>
-
-                    </div>
-                    <!-- product item -->
-
-
-                    <!-- product_item -->
-
-                    <div class="product_item">
-                        <!-- image -->
-                        <div class="product_item_thumbnail">
-                            <img src="assets/frontend/image/single page/single product/product11.jpg" alt="">
-                        </div>
-
-                        <!-- product content -->
-                        <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
-                                and mouse set - QWERTY - US - black</a>
-
-                            <!-- price -->
-                            <div class="product_item_price">
-                                <span class="price_currency">usd</span>
-                                <span class="price_currency_value">$856</span>
-                            </div>
-
-                            <!-- button -->
-                            <a href="" class="product_button">Add to Basket</a>
-                        </div>
-
-                    </div>
-                    <!-- product item -->
-
 
                 </div>
             </div>
         </div>
     </section>
+    <!------Purchased warranty End---->
 
-    <!-- category -->
-    <section class="network_cable section_padding" style="background: #F7F6F5;">
-        <div class="container">
 
-            <div class="section_title">
-                <h3 class="title_top_heading">By brand</h3>
+    <!--=====Recommended technology deals=====-->
+    <section class="container">
+        <div class="popular_product_section_content">
+            <!-- section title -->
+            <div class="tech_deals_featured_item_title">
+                <h3>Recommended technology deals for you</h3>
             </div>
+            <!-- wrapper -->
+            <div class="populer_product_slider">
 
-            <div class="refur_brand_wrapper">
+                <!-- product_item -->
+                @foreach ($techDeal as $item)
+                    <div class="product_item">
+                        <!-- image -->
+                        <div class="product_item_thumbnail">
+                            <img src="{{ asset('storage/Product/' . $item->image) }}" alt="">
+                        </div>
 
-                <!-- item -->
-                <div class="category_item_inner">
-                    <!-- image -->
-                    <div class="category_item_image">
-                        <img src="assets/frontend/image/brand/apc.png" alt="">
-                    </div>
-                    <!-- title -->
-                    <div class="category_item_title">Ethernet</div>
-                </div>
+                        <!-- product content -->
+                        <div class="product_item_content">
+                            <a href="" class="product_item_content_name">{{ $item->title }}</a>
 
-                <!-- item -->
-                <div class="category_item_inner">
-                    <!-- image -->
-                    <div class="category_item_image">
-                        <img src="assets/frontend/image/brand/cisco.png" alt="">
-                    </div>
-                    <!-- title -->
-                    <div class="category_item_title">Ethernet</div>
-                </div>
+                            <!-- price -->
+                            <div class="product_item_price">
+                                <span class="price_currency">usd</span>
+                                <span class="price_currency_value">${{ $item->price }}</span>
+                            </div>
 
-                <!-- item -->
-                <div class="category_item_inner">
-                    <!-- image -->
-                    <div class="category_item_image">
-                        <img src="assets/frontend/image/brand/axiom.png" alt="">
-                    </div>
-                    <!-- title -->
-                    <div class="category_item_title">Ethernet</div>
-                </div>
+                            <!-- button -->
+                            <form class="myForm">
+                                @csrf
+                                <input type="hidden" value="{{ $item->id }}" name="id" id="id">
+                                <input type="hidden" value="{{ $item->title }}" name="name" id="name">
+                                <input type="hidden" value="{{ $item->price }}" name="price" id="price">
+                                <input type="hidden" value="{{ $item->image }}" name="image" id="image">
+                                <input type="hidden" value="1" min="1" name="quantity" id="quantity">
+                                <button type="submit" class="product_button product_button_change" data-toggle="modal"
+                                    id="addToBasket" data-target="#mediumModal"
+                                    data-attr="{{ route('modal', ['id' => $item->id]) }}">Add to Basket</button>
+                            </form>
+                        </div>
 
-                <!-- item -->
-                <div class="category_item_inner">
-                    <!-- image -->
-                    <div class="category_item_image">
-                        <img src="assets/frontend/image/brand/lexmark.png" alt="">
                     </div>
-                    <!-- title -->
-                    <div class="category_item_title">Ethernet</div>
-                </div>
+                @endforeach
 
-                <!-- item -->
-                <div class="category_item_inner">
-                    <!-- image -->
-                    <div class="category_item_image">
-                        <img src="assets/frontend/image/brand/2.png" alt="">
-                    </div>
-                    <!-- title -->
-                    <div class="category_item_title">Ethernet</div>
-                </div>
-                <!-- item -->
-                <div class="category_item_inner">
-                    <!-- image -->
-                    <div class="category_item_image">
-                        <img src="assets/frontend/image/brand/3.png" alt="">
-                    </div>
-                    <!-- title -->
-                    <div class="category_item_title">Ethernet</div>
-                </div>
-                <!-- item -->
-                <div class="category_item_inner">
-                    <!-- image -->
-                    <div class="category_item_image">
-                        <img src="assets/frontend/image/brand/hdmi.png" alt="">
-                    </div>
-                    <!-- title -->
-                    <div class="category_item_title">Ethernet</div>
-                </div>
-                <!-- item -->
-                <div class="category_item_inner">
-                    <!-- image -->
-                    <div class="category_item_image">
-                        <img src="assets/frontend/image/brand/1.png" alt="">
-                    </div>
-                    <!-- title -->
-                    <div class="category_item_title">Ethernet</div>
-                </div>
+                <!-- product item -->
+
 
             </div>
-
         </div>
     </section>
+    <hr>
+    <!-- Recommended technology deals Section End -->
+
+    <!--========Shop by category=======-->
+    <section class="container">
+        <!--Title-->
+        <div class="tech_deals_featured_item_title">
+            <h3>Shop by category</h3>
+        </div>
+        <!--Product Category-->
+        <div class="row">
+            <!--Category item-->
+            @foreach ($categories as $item)
+                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 p-4">
+                    <img class="img-fluid mb-4" src="{{ asset('storage/Category/' . $item->sub_img) }}" alt="">
+                    <div class="common_product_item_text">
+                        <a href="{{ url('category.html/' . $item->sub_category) }}">{{ $item->sub_category }}</a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+    </section>
+    <!------Shop by category---->
+
+
     @include('frontend.footer')
 @endsection

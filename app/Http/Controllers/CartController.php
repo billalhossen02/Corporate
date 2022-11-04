@@ -13,7 +13,7 @@ class CartController extends Controller
         $cartItems = \Cart::getContent();
         // dd($cartItems);
         $products = Product::all();
-        return view('frontend.cart.cart', compact('cartItems','products'));
+        return view('frontend.cart.cart', compact('cartItems', 'products'));
     }
 
 
@@ -28,7 +28,7 @@ class CartController extends Controller
                 'image' => $request->image,
             )
         ]);
-        session()->flash('success', 'Product is Added to Cart Successfully !');
+        // session()->flash('success', 'Product is Added to Cart Successfully !');
         return redirect()->back();
     }
 
@@ -44,7 +44,7 @@ class CartController extends Controller
             ]
         );
 
-        session()->flash('success', 'Item Cart is Updated Successfully !');
+        // session()->flash('success', 'Item Cart is Updated Successfully !');
 
         return redirect()->route('cart.list');
     }
@@ -66,9 +66,9 @@ class CartController extends Controller
         return redirect()->route('cart.list');
     }
 
-    public function checkout(){
+    public function checkout()
+    {
         $cartItems = \Cart::getContent();
-        return view('frontend.cart.checkout',['cartItems' => $cartItems]);
+        return view('frontend.cart.checkout', ['cartItems' => $cartItems]);
     }
-
 }

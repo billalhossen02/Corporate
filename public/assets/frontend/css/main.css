@@ -793,7 +793,7 @@ li.nav_toogler.activeList .sub_nav{
 */
 
 .banner_single_page {
-    background: url(../image/single\ page/banner/single-banner3.jpg);
+    /* background: url(../image/single\ page/banner/single-banner3.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -891,7 +891,6 @@ li.nav_toogler.activeList .sub_nav{
 } */
 
 .product_item_thumbnail {
-    width: 100%;
     max-width: 150px;
     min-width: 150px;
     height: auto;

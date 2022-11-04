@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>NGenIt Corporate</title>
+    <link rel="icon" href="{{ asset('assets/frontend/image/Logo/logo.png') }}">
     @include('frontend.style.css')
 
 </head>
 
-<body>
+<body class="p-0 m-0">
 
     @yield('content')
 
@@ -20,6 +21,10 @@
     <script src="{{ asset('assets/frontend/js/javascript.mr.js') }}"></script>
 
     @include('frontend.style.js')
+
+    <div>
+        @include('frontend.client.feedback')
+    </div>
 
 </body>
 

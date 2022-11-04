@@ -272,9 +272,9 @@
                     <ul>
                         <li><a href="{{ route('shop.html') }}">Product categories</a></li>
                         <li><a href="{{ url('partner.html') }}">Brands</a></li>
-                        <li><a>Tech deals</a></li>
+                        <li><a href="{{ url('techdeal.html') }}">Tech deals</a></li>
                         <li><a>Account benefits</a></li>
-                        <li><a>Refurbished products</a></li>
+                        <li><a href="{{ 'techdeal.html/#refurb' }}">Refurbished products</a></li>
                     </ul>
                 </div>
 
@@ -323,8 +323,8 @@
                                     <input type="hidden" value="{{ $item->price }}" name="price" id="price">
                                     <input type="hidden" value="{{ $item->image }}" name="image" id="image">
                                     <input type="hidden" value="1" min="1" name="quantity" id="quantity">
-                                    <button type="submit" class="product_button product_button_change" data-toggle="modal" id="addToBasket"
-                                        data-target="#mediumModal"
+                                    <button type="submit" class="product_button product_button_change"
+                                        data-toggle="modal" id="addToBasket" data-target="#mediumModal"
                                         data-attr="{{ route('modal', ['id' => $item->id]) }}">Add to Basket</button>
                                 </form>
                             </div>
@@ -362,8 +362,8 @@
                                     <input type="hidden" value="{{ $item->price }}" name="price" id="price">
                                     <input type="hidden" value="{{ $item->image }}" name="image" id="image">
                                     <input type="hidden" value="1" min="1" name="quantity" id="quantity">
-                                    <button type="submit" class="product_button product_button_change" data-toggle="modal" id="addToBasket"
-                                        data-target="#mediumModal"
+                                    <button type="submit" class="product_button product_button_change"
+                                        data-toggle="modal" id="addToBasket" data-target="#mediumModal"
                                         data-attr="{{ route('modal', ['id' => $item->id]) }}">Add to Basket</button>
                                 </form>
                             </div>

@@ -217,8 +217,8 @@
                                                     <input type="hidden" value="{{ $item->image }}" name="image"
                                                         id="image">
                                                     <input type="hidden" value="1" name="quantity" id="quantity">
-                                                    <button type="submit" class="product_button product_button_change" data-toggle="modal"
-                                                        id="addToBasket" data-target="#mediumModal"
+                                                    <button type="submit" class="product_button product_button_change"
+                                                        data-toggle="modal" id="addToBasket" data-target="#mediumModal"
                                                         data-attr="{{ route('modal', ['id' => $item->id]) }}">Add to
                                                         Basket</button>
                                                 </form>
@@ -238,7 +238,7 @@
                 <div class="cart_sidebar_sumury">
                     <div class="cart_summury_title">Summary</div>
 
-                    <div class="summury_count">
+                    <div class="summury_count" id="cart_summary">
                         <ul>
                             <li class="">
                                 <span>Subtotal</span>
@@ -343,7 +343,6 @@
 
             $.ajax({
                 type: "POST",
-                dataType: "json",
                 data: {
                     id: id,
                     quantity: quantity,
@@ -352,7 +351,10 @@
                 url: "{{ route('cart.update') }}",
                 success: function(data) {
                     console.log("Success");
+                    $("#cart_summary").load(window.location.href + " #cart_summary");
+
                 }
+
             })
 
             //    var getTotal = $("#getTotal").val();

@@ -1,28 +1,19 @@
 var toggleItem = document.querySelectorAll(".nav_toogler")
-var  toggleSubItem = document.querySelectorAll(".sub_nav")
+var toggleSubItem = document.querySelectorAll(".sub_nav")
 
-;[...toggleItem].forEach((item, index) => {
+;
+[...toggleItem].forEach((item, index) => {
     item.addEventListener("click", function () {
-
-        ;[...toggleSubItem].forEach((child) => {
-            child.classList.remove("activeList");
-        });
-
-        // [...toggleItem].forEach((children) => {
-        //     children.classList.remove("active");
-        //     (children.dataset.id != index) && children.classList.remove("show_child");
-        // });
-
-        // item.classList.add("active");
-        // item.classList.toggle("show_child");
-
+        for (var i = 0; i < toggleItem.length; i++) {
+            toggleItem[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("activeList");
+                current[index].className = current[index].className.replace(" activeList", "");
+                this.className += " activeList";
+            });
+        }
         item.classList.toggle("activeList")
     });
 });
-
-
-
-
 
 $('.banner_slider').slick({
     dots: true,
@@ -35,7 +26,7 @@ $('.banner_slider').slick({
 });
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('.populer_product_slider, .product_veiw_details_wrapper').slick({
         dots: true,
         autoplay: false,
@@ -43,7 +34,6 @@ $(document).ready(function() {
         infinite: true,
         slidesToShow: 4,
         speed: 200,
-
         centerPadding: '80px',
         responsive: [{
                 breakpoint: 760,
@@ -52,9 +42,7 @@ $(document).ready(function() {
                     slidesToScroll: 1,
                     items: 1,
                 }
-
             },
-
             {
                 breakpoint: 540,
                 settings: {
@@ -62,9 +50,7 @@ $(document).ready(function() {
                     slidesToScroll: 1,
                     items: 1,
                 }
-
             },
-
         ]
     });
 });
@@ -87,6 +73,3 @@ $(document).ready(function() {
 
 
 // });
-
-
-

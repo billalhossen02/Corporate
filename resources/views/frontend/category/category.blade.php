@@ -4,7 +4,8 @@
     @include('frontend.header')
 
     <!-- banner single page start -->
-    <section class="banner_single_page">
+    <section class="banner_single_page" style="background-image:url('{{ asset('storage/Banner/' . $data->banner) }}');
+    ">
         <div class="container">
             <div class="single_banner_content">
                 <!-- image -->
@@ -18,7 +19,7 @@
                     <form method="GET" action="{{ url('product/filter') }}"><button type="submit"
                             class="single_banner_button">
                             <input type="hidden" name="keyword" value="Cables">
-                            Browse all cables</button>
+                            Browse all {{ $data->category }}</button>
                     </form>
                 </div>
             </div>
@@ -30,7 +31,7 @@
         <div class="container">
 
             <div class="section_title">
-                <h3 class="title_top_heading">Display cables</h3>
+                <h3 class="title_top_heading">Display {{ $data->category }}</h3>
             </div>
 
             <div class="network_cable_wrapper">
@@ -102,7 +103,7 @@
             <div class="category_all_btn">
                 <form method="GET" action="{{ url('product/filter') }}"><button type="submit" class="product_button">
                         <input type="hidden" name="keyword" value="Cables">
-                        Shop all cables</button>
+                        Shop all {{ $data->category }}</button>
                 </form>
             </div>
 
@@ -114,7 +115,7 @@
         <div class="container">
 
             <div class="section_title">
-                <h3 class="title_top_heading">Network cables</h3>
+                <h3 class="title_top_heading">Network {{ $data->category }}</h3>
             </div>
 
             <div class="network_cable_wrapper">
@@ -185,7 +186,7 @@
                 <form method="GET" action="{{ url('product/filter') }}"><button type="submit"
                         class="product_button">
                         <input type="hidden" name="keyword" value="Cables">
-                        Shop all cables</button>
+                        Shop all {{ $data->category }}</button>
                 </form>
             </div>
 
@@ -268,7 +269,7 @@
                 <form method="GET" action="{{ url('product/filter') }}"><button type="submit"
                         class="product_button">
                         <input type="hidden" name="keyword" value="Cables">
-                        Shop all cables adapter</button>
+                        Shop all {{ $data->category }}</button>
                 </form>
             </div>
 
@@ -281,7 +282,7 @@
             <div class="popular_product_section_content">
                 <!-- section title -->
                 <div class="section_title">
-                    <h3 class="title_top_heading">Featured cables</h3>
+                    <h3 class="title_top_heading">Featured {{ $data->category }}</h3>
                 </div>
                 <!-- wrapper -->
                 <div class="populer_product_slider">
@@ -312,8 +313,8 @@
                                     <input type="hidden" value="{{ $item->price }}" name="price" id="price">
                                     <input type="hidden" value="{{ $item->image }}" name="image" id="image">
                                     <input type="hidden" value="1" min="1" name="quantity" id="quantity">
-                                    <button type="submit" class="product_button product_button_change" data-toggle="modal" id="addToBasket"
-                                        data-target="#mediumModal"
+                                    <button type="submit" class="product_button product_button_change"
+                                        data-toggle="modal" id="addToBasket" data-target="#mediumModal"
                                         data-attr="{{ route('modal', ['id' => $item->id]) }}">Add to Basket</button>
                                 </form>
                             </div>
@@ -365,7 +366,7 @@
         <div class="container">
 
             <div class="section_title">
-                <h3 class="title_top_heading">Storage cables</h3>
+                <h3 class="title_top_heading">Storage {{ $data->category }}</h3>
             </div>
 
             <div class="network_cable_wrapper">
@@ -426,20 +427,21 @@
                             <input type="hidden" name="keyword" value="{{ $data->cat16[0]->sub_sub_sub_category }}">
                             <button type="submit"
                                 style="border: none; background:none; color:#BE215E">{{ $data->cat16[0]->sub_sub_sub_category }}</button>
-                        </form>div>
+                        </form>
                     </div>
-
-                </div>
-
-                <div class="category_all_btn">
-                    <form method="GET" action="{{ url('product/filter') }}"><button type="submit"
-                            class="product_button">
-                            <input type="hidden" name="keyword" value="Cables">
-                            Shop all cables</button>
-                    </form>
                 </div>
 
             </div>
+
+            <div class="category_all_btn">
+                <form method="GET" action="{{ url('product/filter') }}"><button type="submit"
+                        class="product_button">
+                        <input type="hidden" name="keyword" value="Cables">
+                        Shop all {{ $data->category }}</button>
+                </form>
+            </div>
+
+        </div>
     </section>
 
     <!-- network cable -->
@@ -447,7 +449,7 @@
         <div class="container">
 
             <div class="section_title">
-                <h3 class="title_top_heading">Power cables</h3>
+                <h3 class="title_top_heading">Power {{ $data->category }}</h3>
             </div>
 
             <div class="network_cable_wrapper">
@@ -518,7 +520,7 @@
                 <form method="GET" action="{{ url('product/filter') }}"><button type="submit"
                         class="product_button">
                         <input type="hidden" name="keyword" value="Cables">
-                        Shop all cables</button>
+                        Shop all {{ $data->category }}</button>
                 </form>
             </div>
 

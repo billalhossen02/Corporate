@@ -11,7 +11,7 @@ class CategoryController extends Controller
 
     public function categories()
     {
-        $categories = Category::orderBy('id', 'desc')->paginate(5);
+        $categories = Category::groupBy('sub_category')->orderBy('id', 'desc')->paginate(5);
         return view('backend.category.category_view', compact('categories'));
     }
     public function fetch2(Request $request)

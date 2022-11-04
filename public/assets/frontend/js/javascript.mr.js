@@ -1,3 +1,37 @@
+/*================///Feedback page ///==============*/
+//feedback open or close
+var lastState = false;
+
+function feedbackButtonClicked() {
+if (!lastState) {
+    //open
+    lastState = true
+    document.getElementById("feedback_Sidebar").style.cssText = "width: 380px; right:0px;";
+    document.getElementById("feedback_btn").style.marginLeft = "380px";
+    document.getElementById("sidebarButton_fb").style.right = "332px";
+} else {
+    //close
+    lastState = false
+    document.getElementById("feedback_Sidebar").style.cssText = "width: 0px; right:-18px;";
+    document.getElementById("feedback_btn").style.marginLeft = "0px";
+    document.getElementById("sidebarButton_fb").style.right = "-40px";
+}
+}
+//-----feedback Details Btn
+function feedbackVisible() {
+if (document.getElementById('feedback').style.display == 'none') {
+    document.getElementById('feedback').style.display = 'flex';
+    document.getElementById('feedback_details').style.display = 'none';
+}
+else {
+    document.getElementById('feedback').style.display = 'none';
+    document.getElementById('feedback_details').style.display = 'block';
+}
+}
+/*================///Feedback End ///==============*/
+
+
+
 /*================///Cookies page ///==============*/
 //----Check Box Show Hide
 function myCheckboxbtn() {

@@ -1097,21 +1097,18 @@
                                             <ul>
 
                                                 @foreach (products()->take(5) as $item)
+                                                    <li>
+                                                        <a href="{{ route('product', ['id' => $item->id]) }}">
+                                                            <span>{{ $item->title }}</span>
+                                                            <span><i class="fa-solid fa-angle-right"></i></span>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
 
+                                            </ul>
+                                        </div>
 
-                                                <li>
-                                                    <a href="{{ route('product',['id' => $item->id]) }}">
-                                    <span>{{ $item->title }}</span>
-                                    <span><i class="fa-solid fa-angle-right"></i></span>
-                                    </a>
-                    </li>
-
-                    @endforeach
-
-                </ul>
-            </div>
-
-        </div> --}}
+                                    </div> --}}
                                     <!-- item -->
 
 
@@ -1129,12 +1126,12 @@
 
                                                 @foreach (categories()->take(5) as $item)
                                                     <li>
-                                                        <a href="{{ url('category.html/'.$item->sub_category) }}">
+                                                        <a href="{{ url('category.html/' . $item->sub_category) }}">
                                                             <span>{{ $item->sub_category }}</span>
-                                                                <span><i style="
+                                                            <span><i style="
                                                                 font-size: 12px;
                                                                 color: var(--mainColor);"
-                                                                        class="fa-solid fa-angle-right"></i></span>
+                                                                    class="fa-solid fa-angle-right"></i></span>
                                                         </a>
                                                     </li>
                                                 @endforeach
