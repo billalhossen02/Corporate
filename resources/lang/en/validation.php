@@ -145,6 +145,10 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'email' => [
+            'unique' => 'This email address has already been taken.',
+        ],
     ],
 
     /*

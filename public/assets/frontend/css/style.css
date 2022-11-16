@@ -69,6 +69,232 @@
 
 /*-----End-----*/
 
+/*===============================================*/
+/*========================
+           Support assistance Page
+        ==========================*/
+/*================================================*/
+
+.support_assistance_header {
+    /* background-image: url("../images/buy-category-hero.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 0px;
+}
+.support_assistance_header span {
+    text-align: center;
+    font-size: 20px;
+    line-height: 44px;
+    color: #fff;
+    padding: 0px 20px;
+    background-color: var(--crimson);
+    border-radius: 50px;
+    font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+.support_assistance_header h1 {
+    text-align: center;
+    font-family: lato;
+    color: white;
+    font-size: 56px;
+    font-weight: 100;
+}
+
+/*---------------------*/
+.support_assistance_wrapper{
+    margin-top: 60px;
+}
+.support_assistance_content p{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #4a4949;
+    margin-bottom: 40px;
+}
+
+.support_assistance_content h3{
+    font-size: 36px;
+    font-family: lato;
+    font-weight: 100;
+    color: #312b2d;
+    margin-bottom: 20px;
+}
+.support_assistance_content a{
+    color: var(--crimson);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+.support_assistance_content a:hover{
+    color: var(--dark-crimson);
+}
+.support_assistance_content span{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #4a4949;
+}
+.support_assistance_content img{
+    margin-top: 50px;
+}
+
+.contact_hline_call {
+    overflow :hidden;
+    color: gray;
+    text-align: left;
+    line-height: 1.6em;
+  }
+  
+  .contact_hline_call:before {
+    display: block;
+    float: right;
+    margin-top: .8em; /* half the line-height */
+    border-top: 2px solid silver;
+    width: 70%;
+    content: "";
+  }
+  
+.contact_hline_email {
+    overflow :hidden;
+    color: gray;
+    text-align: left;
+    line-height: 1.6em;
+  }
+  .contact_hline_email:before {
+    display: block;
+    float: right;
+    margin-top: .8em; /* half the line-height */
+    border-top: 2px solid silver;
+    width: 60%;
+    content: "";
+  }
+
+/*-------------*/
+.support_assistance_contact_us{
+    background: #f7f6f5;
+    padding: 20px 30px;
+}
+.support_assistance_contact_us h4{
+    font-size: 36px;
+    color: #312b2d;
+    margin-bottom: 20px;
+    font-family: lato;
+}
+.support_assistance_contact_us label{
+    font-weight: bold;
+}
+
+/*===============================================*/
+/*========================
+           Account Benefits Page
+        ==========================*/
+/*================================================*/
+
+.account_benefits_header {
+    /* background-image: url("../images/buy-category-hero.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 150px 0px;
+}
+
+.account_benefits_header h1 {
+    text-align: center;
+    font-family: lato;
+    color: white;
+    font-size: 56px;
+    font-weight: 100;
+}
+
+.account_benefits_header h3 {
+    text-align: center;
+    font-size: 20px;
+    line-height: 44px;
+    color: rgb(255, 252, 252);
+    padding: 0px 15%;
+    font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+/*-----------*/
+.challenges_face_title{
+    margin: 50px;
+}
+.challenges_face_title h3{
+    text-align: center;
+    font-family: lato;
+    font-size: 32px;
+    color: #3e332d;
+    font-weight: 100;
+}
+.challenges_face_title p{
+    text-align: center;
+    font-size: 18px;
+    color: #3e332d;
+}
+.challenges_face_icon img{
+    height: 100px;
+}
+.challenges_face_icon a {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+    font-family: "allumi-2-std", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    /*display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;*/
+}
+.challenges_face_icon a:hover {
+    color: #ae0a46;
+}
+
+/*------------*/
+.account_benefits_section_wp{
+    background: #f7f6f5;
+    padding: 60px 0px;
+    color: #3e332d;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+.account_benefits_section_bg{
+    padding: 60px 0px;
+    color: #3e332d;
+}
+.account_benefits_section_wp a{
+    color: var(--dark-crimson);
+}
+.account_benefits_section_wp a:hover{
+    color: var(--dark-crimson);
+}
+.account_benefits_section_bg a{
+    color: var(--dark-crimson);
+}
+.account_benefits_section_wp a:hover{
+    color: var(--dark-crimson);
+}
+.account_benefits_section{
+    padding-right: 20px;
+}
+.account_benefits_section h3{
+    font-family: lato;
+    font-size: 32px;
+    color: #3e332d;
+    font-weight: 100;
+    padding-bottom: 20px;
+    border-bottom: 1px solid silver;
+}
+.account_benefits_section p{
+    font-size: 16px;
+}
+.account_benefits_section a{
+    color: var(--crimson);
+}
+.account_benefits_section a:hover{
+    color: var(--dark-crimson);
+}
+
 
 /*===================================*/
 /*====================
@@ -460,7 +686,7 @@
   }
   .checkmark_rounded {
     position: absolute;
-    top: 36px;
+    top: 20px;
     left: 47%;
     height: 28px;
     width: 28px;
@@ -501,6 +727,12 @@
            Cookies Settings page
         ==========================*/
 /*================================================*/
+
+.cookises_settings_wrapper{
+    position: fixed;
+    z-index: 1031;
+}
+
 
 .cookises_settings_wrapper input[type="checkbox"] {
     display: none;
@@ -1848,17 +2080,15 @@ a:hover{
 }
 
 
-/*-********************************-*/
-/*-********************************-*/
-        /*Client Dashboard*/
-/*-********************************-*/
-/*-********************************-*/
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
+/*=======================================*/
+/*============================
+           User Dashboard Master
+        ==========================*/
+/*=======================================*/
 
 /*common button*/
-.common_button_dashboard{
+.common_button_dashboard {
     padding: 10px 40px;
     cursor: pointer;
     font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -1869,96 +2099,164 @@ a:hover{
     background-color: #ae0a46;
     color: white;
 }
-.common_button_dashboard:hover{
+
+.common_button_dashboard:hover {
     background-color: #7a0932;
     color: white;
     transition: .3s;
 }
 /*-----End-----*/
 
+
+
+/*Sidebar & Content Show hide Setting*/
+.content_wrapper{
+    position: relative;
+}
+#mySidebar {
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #5f5753;
+    overflow-x: hidden;
+    transition: 0.2s;
+    width: 320px;
+}
+#Content_Wrapper{
+    transition:.2s;
+    padding: 10px 0px 20px 20px;
+    background:#dfdfdd;
+    margin-left:320px
+}
+#userSideButton_wrapper{
+    background: #d6d1ca;
+    display: none;
+}
+
+/*---------------------*/
+.sidebarButtonStyle {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #c0b7ae;
+    color: #222;
+    padding: 10px 15px;
+    border: none;
+    z-index: 1;
+    transition: 0.5s;
+  }
+  
+.sidebarButtonStyle:focus{
+    border: none;
+    outline: none;
+}
+.sidebarButtonStyle:hover {
+    background-color: #8d867f;
+}
+  
+
+@media screen and (max-height: 450px) {
+    
+}
+/*---End----*/
+
+
 /*=====================================
-    Client Dahboard -- Profile
+    User Dahboard -- Profile Page
 ======================================*/
-.client_db_profile_header{
+.client_db_profile_header {
     margin: 0px;
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #ae0a46;
 }
-.client_db_profile_header img{
+
+.client_db_profile_header img {
     clip-path: circle();
     width: 250px;
     display: inline;
 }
-.client_db_profile_title h3{
+
+.client_db_profile_title h3 {
     margin-top: 20px;
     color: #222;
     font-family: arial;
     font-style: normal;
 }
-.client_db_profile_title p{
-}
-.client_db_details h3{
+
+.client_db_profile_title p {}
+
+.client_db_details h3 {
     color: #222;
     font-family: lato;
     font-style: normal;
 }
-.client_db_about h3{
+
+.client_db_about h3 {
     color: #222;
     font-family: lato;
     font-style: normal;
 }
-.client_db_about p{
+
+.client_db_about p {
     font-size: 16px;
     color: #222;
     font-family: arial;
     font-style: normal;
 }
-.client_db_about ul{
+
+.client_db_about ul {
     margin: 0px;
     padding: 0px;
 }
-.client_db_about ul li{
+
+.client_db_about ul li {
     list-style-type: none;
     float: left;
     margin-right: 10px;
     color: white;
 }
-.client_db_about ul li a{
+
+.client_db_about ul li a {
     color: white;
     background-color: #ae0a46;
     padding: 4px 8px;
     border-radius: 5px;
 }
-.client_db_about ul li a:hover{
+
+.client_db_about ul li a:hover {
     background-color: #510320;
 
 }
+
 /*=====================================
-    Client Dahboard -- Personal Product
+    User Dahboard -- Add Product Page
 ======================================*/
-.client_dashboard_personal_product_list h2{
+.client_dashboard_personal_product_list h2 {
     font-family: lato;
     font-style: normal;
     font-weight: 100;
     color: #383d41;
 }
-.client_dashboard_personal_product_list p{
 
-}
-.personal_product_list_add_item label{
+.client_dashboard_personal_product_list p {}
+
+.personal_product_list_add_item label {
     color: #222;
     font-size: 16px;
     font-weight: 100;
     font-family: arial;
     margin-top: 10px;
 }
-#product_input{
+
+#product_input {
     width: 35%;
     margin-left: 10px;
     color: #495057;
 }
-#product_input input[type=text]{
+
+#product_input input[type=text] {
     border: 1px solid gray;
     color: #495057;
     outline: none;
@@ -1967,7 +2265,8 @@ a:hover{
     opacity: 0.7;
     width: 100%;
 }
-.personal_product_list_add_item button{
+
+.personal_product_list_add_item button {
     color: white;
     background-color: #ae0a46;
     padding: 10px 20px;
@@ -1976,22 +2275,25 @@ a:hover{
     opacity: 0.7;
     margin-left: 10px;
 }
-.btn_delete{
+
+.btn_delete {
     background-color: white;
     border: none;
     color: #ae0a46;
     outline: none;
     font-size: 18px;
 }
-.btn_add_to_card{
+
+.btn_add_to_card {
     background-color: #ae0a46;
     color: #fff;
     padding: 10px 20px;
     outline: none;
     border: none;
 }
+
 /*=====================================
-    Client Dahboard Content-resources
+    User Dahboard -- Content-resources
 ======================================*/
 .header_title_content_resources {
     background-image: url("../images/desktop-shop-hero.jpg");
@@ -2014,7 +2316,8 @@ a:hover{
     width: 80%;
     font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
-.content_resources_search input[type=text]{
+
+.content_resources_search input[type=text] {
     width: 75%;
     height: auto;
     background-color: #ffffff;
@@ -2025,7 +2328,8 @@ a:hover{
     padding-left: 20px;
     outline: none;
 }
-.content_resources_search button{
+
+.content_resources_search button {
     width: 23%;
     background-color: #ae0a46;
     border: none;
@@ -2033,13 +2337,15 @@ a:hover{
     padding: 10px 0px;
     outline: none;
 }
-.content_resources_search button:hover{
+
+.content_resources_search button:hover {
     background-color: #7a0932;
     color: white;
     transition: .3s;
 }
+
 /*----------------*/
-.title_h2{
+.title_h2 {
     text-align: center;
     color: #222;
     margin: 10px 0;
@@ -2047,34 +2353,42 @@ a:hover{
     font-family: lato;
     margin: 40px 0px;
 }
-.faq-answers a{
+
+.faq-answers a {
     color: #222;
 }
-.faq-answers a:hover{
+
+.faq-answers a:hover {
     color: #ae0a46;
 }
-.terms_list a{
+
+.terms_list a {
     color: #ae0a46;
 }
-.terms_list a:hover{
+
+.terms_list a:hover {
     color: #6a0aae;
 }
+
 /*------------------*/
-.explore_knowledge_wrapper{
+.explore_knowledge_wrapper {
     margin-bottom: 50px;
 }
-.popular_published_answers_wrapper{
+
+.popular_published_answers_wrapper {
     background-color: #f7f6f5;
     padding: 40px 0px;
 }
-.terms_conditions_wrapper{
+
+.terms_conditions_wrapper {
     background-color: #f7f6f5;
     padding: 40px 0px;
     margin-top: 60px;
 }
-/*====================================
-    Order Track Page--cliden Dashboard
-=======================================*/
+
+/*======================================
+    User Dashboard -- Order Track Page 
+=========================================*/
 
 /*order track*/
 .search_order_tracking form {
@@ -2086,6 +2400,7 @@ a:hover{
     flex-direction: row;
     align-items: center;
 }
+
 .search_order_tracking input {
     all: unset;
     font: 16px system-ui;
@@ -2095,26 +2410,30 @@ a:hover{
     height: auto;
     padding: 10px 0px;
     padding-left: 20px;
-    outline:none;
+    outline: none;
 }
+
 #form button {
     color: #fff;
     width: 20%;
     padding: 10px 0px;
     margin-left: 1%;
-    outline:none;
+    outline: none;
     background: #ae0a46;
     border: none;
 }
-#form button:hover{
+
+#form button:hover {
     background: #860333;
     transition: .3s;
 }
-#form ::placeholder{
+
+#form ::placeholder {
     color: #ae0a46;
 }
+
 /*-----------------*/
-.card-img img{
+.card-img img {
     margin-top: -60px;
     border-radius: 50%;
     width: 100px;
@@ -2137,6 +2456,7 @@ a:hover{
     opacity: 1;
     color: #ae0a46;
 }
+
 .card-thumb h4 {
     text-align: center;
     font-size: 18px;
@@ -2145,7 +2465,7 @@ a:hover{
     font-family: "allumi-2-std", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
 
-.card-thumb ul{
+.card-thumb ul {
     margin: 20px 0px;
     padding: 0px;
     text-align: center;
@@ -2154,10 +2474,12 @@ a:hover{
     font-size: 14px;
     color: #3e332d;
 }
-.card-thumb ul li{
+
+.card-thumb ul li {
     list-style-type: none;
 
 }
+
 .card-thumb ul li a {
     color: #222;
 }
@@ -2165,7 +2487,8 @@ a:hover{
 .card-thumb ul li a:hover {
     color: #ae0a46;
 }
-.order_tracking_btn a{
+
+.order_tracking_btn a {
     padding: 10px 20px;
     cursor: pointer;
     font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -2176,21 +2499,25 @@ a:hover{
     background-color: #ffffff;
     color: #3e332d;
 }
-.order_tracking_btn a:hover{
+
+.order_tracking_btn a:hover {
     background-color: #3e332d;
     color: white;
     transition: .3s;
 }
+
 /*order details*/
-.client_db_oredr_details{
+.client_db_oredr_details {
     margin: 40px 0px;
     width: 100%;
 }
-.client_db_oredr_details table{
+
+.client_db_oredr_details table {
     margin: 0px;
     padding: 0px;
 }
-.client_db_oredr_details .btn_action{
+
+.client_db_oredr_details .btn_action {
     background-color: rgb(0, 94, 255);
     padding: 5px 10px;
     color: white;
@@ -2199,48 +2526,54 @@ a:hover{
 
 
 /*=============================
-    Client Dashboard Home page
+    User Dashboard -- Home page
 ===============================*/
-#wrapper{
+#wrapper {
     background: #dfdfdd;
 }
+
 /*---sidebar Toggle---*/
-#click_advance{
+#click_advance {
     margin-left: 300px;
     margin-top: 30px;
     position: absolute;
     z-index: 50000;
     color: #222;
 }
-#click_advance .fa-align-left{
+
+#click_advance .fa-align-left {
     margin-left: -260px;
     color: #5f5753;
     display: block;
 }
+
 /*---sidebar menu---*/
-.sidebar_manu_wrapper{
+.sidebar_manu_wrapper {
     width: 100%;
     height: 100%;
     background-color: #5f5753;
 }
 
-.sidebar-manu{
+.user_dashboard_sidebar_title {
     background-color: white;
-    padding: 20px;
+    padding: 15px;
 }
-.sidebar-manu h2{
-    font-size: 32px;
+
+.user_dashboard_sidebar_title h2 {
+    font-size: 28px;
     line-height: 44px;
     color: rgb(66, 65, 65);
     font-family: lato;
     font-weight: 100;
 }
-.sidebar-manu p{
-    font-size: 16px;
+
+.user_dashboard_sidebar_title p {
+    font-size: 13px;
     color: rgb(66, 65, 65);
     font-family: lato;
 }
-.common_button_logout{
+
+.common_button_logout {
     padding: 5px 20px;
     cursor: pointer;
     font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -2252,88 +2585,102 @@ a:hover{
     color: white;
 }
 
-.sidebar-nav {
+.user_dashboard_sidebar_nav {
     display: block;
     color: white;
 }
-.sidebar-nav p{
+
+.user_dashboard_sidebar_nav p {
     padding: 20px 0px;
     padding-left: 20px;
     margin: 0;
     cursor: pointer;
 }
-.sidebar-nav p:hover{
+
+.user_dashboard_sidebar_nav p:hover {
     padding: 20px 0px;
     padding-left: 20px;
     background-color: #312b2d;
-    display: block;;
+    display: block;
+    ;
 }
-.sidebar-nav a{
+
+.user_dashboard_sidebar_nav a {
     display: block;
     color: white;
     padding: 20px 0px;
     padding-left: 20px;
 }
-.sidebar-nav a:hover{
+
+.user_dashboard_sidebar_nav a:hover {
     background-color: #312b2d;
     display: block;
     color: white;
     padding: 20px 0px;
     padding-left: 20px;
 }
-.accordion-body a{
+
+.accordion-body a {
     background-color: #ffffff;
     color: #222;
 }
-.plusminus{
+
+.plusminus {
     font-weight: bolder;
     font-size: 20px;
 }
 
-.common_button_logout:hover{
+.common_button_logout:hover {
     background-color: #7a0932;
     color: white;
     transition: .3s;
 }
+
+
+
 /*---Content----*/
-#client_dashboard_content_wp{
-    background-color: white;
+.client_dashboard_content_wp {
     padding: 20px;
-    margin: 10px;
+    background:#fff;
 }
-.client_dashboard_welcome_section{
-    margin-top: 10px;
+
+.client_dashboard_welcome_section {
+    margin-top: 0px;
 }
-.client_dashboard_welcome_section h2{
+
+.client_dashboard_welcome_section h2 {
     font-size: 36px;
     line-height: 44px;
     color: rgb(66, 65, 65);
     font-family: lato;
     margin: 10px 0px 20px;
 }
-.client_dashboard_welcome_section p{
+
+.client_dashboard_welcome_section p {
     font-size: 18px;
     line-height: 44px;
     font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     color: #222;
 }
-.client_dashboard_blog{
+
+.client_dashboard_blog {
     margin-top: 20px;
 }
-.client_dashboard_blog h2{
+
+.client_dashboard_blog h2 {
     font-size: 36px;
     line-height: 44px;
     color: rgb(66, 65, 65);
     font-family: lato;
     margin-bottom: 20px;
 }
-.client_dashboard_blog ul li a{
+
+.client_dashboard_blog ul li a {
     font-size: 18px;
     line-height: 44px;
     font-family: "klinic-slab", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     color: #ae0a46;
 }
-
 
 
 /*=============================

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 29, 2022 at 12:01 PM
--- Server version: 8.0.31-0ubuntu0.20.04.1
--- PHP Version: 7.4.3
+-- Generation Time: Nov 13, 2022 at 10:53 AM
+-- Server version: 8.0.30-0ubuntu0.20.04.2
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -73,7 +73,8 @@ CREATE TABLE `brands` (
 INSERT INTO `brands` (`id`, `title`, `image`, `category`, `created_at`, `updated_at`) VALUES
 (1, 'Hp', '1666072675.png', 'top', '2022-10-17 23:54:53', '2022-10-17 23:57:55'),
 (2, 'Microsoft', '1666073282.png', 'featured', '2022-10-17 23:56:06', '2022-10-18 00:08:02'),
-(3, 'Lenovo', '1666073297.png', 'others', '2022-10-17 23:56:26', '2022-10-18 00:08:17');
+(3, 'Lenovo', '1666073297.png', 'others', '2022-10-17 23:56:26', '2022-10-18 00:08:17'),
+(5, 'Intel', '1667449964.png', 'Featured', '2022-11-02 22:32:44', '2022-11-02 22:32:44');
 
 -- --------------------------------------------------------
 
@@ -118,8 +119,9 @@ INSERT INTO `categories` (`id`, `category`, `sub_category`, `sub_img`, `sub_sub_
 (27, 'Hardware', 'Cables', '1666506639.jpg', 'Power cables', NULL, 'Surge protectors', '1666506639.png', '2022-10-23 00:30:39', '2022-10-23 00:30:39'),
 (28, 'Hardware', 'Cables', '1666506664.jpg', 'Power cables', NULL, '3-prong cables', '1666506664.png', '2022-10-23 00:31:04', '2022-10-23 00:31:04'),
 (29, 'Hardware', 'Cables', '1666506698.jpg', 'Power cables', NULL, 'Laptop chargers', '1666506698.png', '2022-10-23 00:31:38', '2022-10-23 00:31:38'),
-(30, 'Software', 'Operating System', NULL, 'Windows', NULL, 'Windows 11', NULL, '2022-10-26 02:14:48', '2022-10-26 02:14:48'),
-(31, 'Software', 'Cloud', NULL, 'Network Application', NULL, 'nulll', NULL, '2022-10-26 02:22:50', '2022-10-26 02:22:50');
+(30, 'Software', 'Operating System', '1664087706.png', 'Windows', NULL, 'Windows 11', NULL, '2022-10-26 02:14:48', '2022-10-26 02:14:48'),
+(31, 'Software', 'Cloud', '1664088985.png', 'Network Application', NULL, 'nulll', NULL, '2022-10-26 02:22:50', '2022-10-26 02:22:50'),
+(32, 'Hardware', 'Printer', '1667450485.jpg', 'Display Printer', NULL, 'HDMI', '1667450403.jpg', '2022-11-02 22:40:03', '2022-11-02 22:40:03');
 
 -- --------------------------------------------------------
 
@@ -162,7 +164,9 @@ CREATE TABLE `category_page_builders` (
 --
 
 INSERT INTO `category_page_builders` (`id`, `category`, `banner`, `h1`, `h2`, `category1`, `category2`, `category3`, `category4`, `category5`, `category6`, `category7`, `category8`, `category9`, `category10`, `category11`, `category12`, `category13`, `category14`, `category15`, `category16`, `category17`, `category18`, `category19`, `category20`, `created_at`, `updated_at`) VALUES
-(2, 'Cables', '1666506944.jpg', 'Cables', 'Make the right connection between your equipment and devices with cables and locks from our partners.', 11, 12, 13, 14, 15, 16, 17, 18, 12, 11, 13, 22, 23, 24, 25, 14, 27, 28, 29, 27, '2022-10-23 00:35:44', '2022-10-23 00:35:44');
+(2, 'Cables', '1667280804.jpg ', 'Cables', 'Make the right connection between your equipment and devices with cables and locks from our partners.', 11, 12, 13, 14, 15, 16, 17, 18, 12, 11, 13, 22, 23, 24, 25, 14, 27, 28, 29, 27, '2022-10-23 00:35:44', '2022-10-23 00:35:44'),
+(4, 'Cloud', '1667281034.jpg', 'Cloud applications', 'Our partnerships with the top cloud providers make it easy for you to get leading applications and Infrastructure as a Service (IaaS) solutions.', 14, 13, 12, 11, 18, 17, 16, 15, 22, 13, 11, 12, 14, 25, 24, 23, 29, 28, 27, 29, '2022-10-31 23:37:14', '2022-10-31 23:37:14'),
+(5, 'Operating System', '1667282063.jpg', 'PC components', 'Stay connected, improve workflows, and increase productivity and processing with PC components and accessories, available from Insight. You’ll stay up and running around the clock.', 12, 11, 13, 14, 16, 17, 15, 18, 11, 12, 13, 22, 24, 23, 25, 14, 29, 27, 28, 27, '2022-10-31 23:54:23', '2022-10-31 23:54:23');
 
 -- --------------------------------------------------------
 
@@ -262,6 +266,32 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` bigint UNSIGNED NOT NULL,
+  `topic_names` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rating` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `topic_names`, `rating`, `created_at`, `updated_at`) VALUES
+(1, 'Pricing|Solutions & services content|Product search', '5', '2022-11-05 10:58:01', '2022-11-05 10:58:06'),
+(2, 'Pricing', '5', '2022-11-05 01:00:11', '2022-11-05 01:00:11'),
+(3, 'Product Details and availability|Articles, reports, & blog content', '1', '2022-11-05 01:02:48', '2022-11-05 01:02:48'),
+(4, 'Pricing|Product search', '3', '2022-11-05 02:28:26', '2022-11-05 02:28:26'),
+(5, 'Product Details and availability|Articles, reports, & blog content|Purchasing, checkout & cart|Pricing', '5', '2022-11-06 03:52:36', '2022-11-06 03:52:36'),
+(6, 'Product Details and availability|Pricing', '4', '2022-11-09 05:27:54', '2022-11-09 05:27:54');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `home_page_builders`
 --
 
@@ -357,7 +387,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (37, '2022_10_20_071836_create_home_page_builders_table', 17),
 (38, '2022_09_06_053732_create_categories_table', 18),
 (40, '2022_10_22_095406_create_category_page_builders_table', 19),
-(41, '2022_09_06_054032_create_products_table', 20);
+(41, '2022_09_06_054032_create_products_table', 20),
+(42, '2022_11_05_045919_create_feedback_table', 21),
+(43, '2022_11_07_090256_create_newsletters_table', 22),
+(44, '2022_11_10_083702_create_supports_table', 23),
+(45, '2022_11_12_091459_create_user_infos_table', 24);
 
 -- --------------------------------------------------------
 
@@ -397,6 +431,29 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `newsletters`
+--
+
+CREATE TABLE `newsletters` (
+  `id` bigint UNSIGNED NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `newsletters`
+--
+
+INSERT INTO `newsletters` (`id`, `email`, `created_at`, `updated_at`) VALUES
+(2, 'kawsarkhanbd3@gmail.com', '2022-11-07 03:22:49', '2022-11-07 03:22:49'),
+(3, 'utyuy@hjhj', '2022-11-11 22:18:26', '2022-11-11 22:18:26'),
+(4, 'kawsarkhan@gmail.com', '2022-11-11 22:25:24', '2022-11-11 22:25:24'),
+(5, 'fgdfg@gdfgd.com', '2022-11-11 22:25:59', '2022-11-11 22:25:59');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orders`
 --
 
@@ -428,7 +485,12 @@ INSERT INTO `orders` (`id`, `user_id`, `product_id`, `user_name`, `phone`, `emai
 (3, 12, 2, 'billal', 1875510694, 'kawsarkhanbd3@gmail.com', 'jamalpur', 'dhaka', 'Dhaka', 1214, 'Bangladesh', '1664106148.png', '1664106148.jpg', '2022-09-25 05:42:28', '2022-09-25 05:42:28'),
 (4, 27, 9, 'billal', 1875510694, 'dev1.ngenit@gmail.com', 'keraniganj Dhaka-1310', 'dhaka', 'Dhaka', 1214, 'Bangladesh', '0', '1664966776.jpg', '2022-10-05 00:51:51', '2022-10-05 04:46:16'),
 (5, 27, 3, 'billal', 1875510694, 'dev1.ngenit@gmail.com', 'keraniganj Dhaka-1310', 'Dhaka', 'Dhaka', 1310, 'Bangladesh', '0', '0', '2022-10-05 04:51:58', '2022-10-05 04:51:58'),
-(6, 27, 6, 'billal', 1875510694, 'dev1.ngenit@gmail.com', 'keraniganj Dhaka-1310', 'Dhaka', 'Dhaka', 1310, 'Bangladesh', '0', '0', '2022-10-05 05:06:50', '2022-10-05 05:06:50');
+(6, 27, 6, 'billal', 1875510694, 'dev1.ngenit@gmail.com', 'keraniganj Dhaka-1310', 'Dhaka', 'Dhaka', 1310, 'Bangladesh', '0', '0', '2022-10-05 05:06:50', '2022-10-05 05:06:50'),
+(7, 32, 2, 'Motiur Rahman', 1909302126, 'motiur.cmt@gmail.com', 'Sharitatpur', 'Dhaka', 'Dhaka', 8000, 'Bangaledsh', '1667472981.jpg', '1667472981.jpg', '2022-11-03 04:56:22', '2022-11-03 04:56:22'),
+(8, 12, 3, 'Billal Hossen', 1787722178, 'admin@gmail.com', 'Keranigaj', 'Dhaka', 'Dhaka', 1310, 'Bangladesh', '0', '0', '2022-11-12 04:59:00', '2022-11-12 04:59:00'),
+(9, 12, 1, 'Billal Hossen', 1787722178, 'admin@gmail.com', 'Keranigaj', 'Dhaka', 'Dhaka', 1310, 'Bangladesh', '0', '0', '2022-11-12 05:00:53', '2022-11-12 05:00:53'),
+(10, 12, 2, 'Billal Hossen', 1787722178, 'admin@gmail.com', 'Keranigaj', 'Dhaka', 'Dhaka', 1310, 'Bangladesh', '0', '0', '2022-11-12 05:00:54', '2022-11-12 05:00:54'),
+(11, 12, 3, 'Billal Hossen', 1787722178, 'admin@gmail.com', 'Keranigaj', 'Dhaka', 'Dhaka', 1310, 'Bangladesh', '0', '0', '2022-11-12 22:25:28', '2022-11-12 22:25:28');
 
 -- --------------------------------------------------------
 
@@ -459,7 +521,12 @@ INSERT INTO `order_details` (`id`, `order_id`, `product_name`, `unit_price`, `qu
 (3, 3, 'Microsoft Surface Pro 8 - 13\" - Core i3 1115G4 - 8 GB RAM - 128 GB SSD', 986, 1, 986, 'Checking', 'Processing', '2022-09-25 05:42:29', '2022-09-25 05:42:29'),
 (4, 4, 'Absolute Resilience - subscription license (1 year) - 1 device', 44, 2, 88, 'Paid', 'Delivered', '2022-10-05 00:51:52', '2022-10-05 05:05:42'),
 (5, 5, 'Lenovo ThinkStation P620 - tower - Ryzen ThreadRipper PRO 3955WX 3.9 GHz - AMD PRO - 32 GB - SSD 1 TB - US', 4351, 1, 4351, 'Checking', 'Processing', '2022-10-05 04:51:58', '2022-10-05 05:05:23'),
-(6, 6, 'Jamf Connect - subscription license - 1 license', 26, 1, 26, 'Checking', 'Processing', '2022-10-05 05:06:50', '2022-10-05 22:43:21');
+(6, 6, 'Jamf Connect - subscription license - 1 license', 26, 1, 26, 'Checking', 'Processing', '2022-10-05 05:06:50', '2022-11-02 22:08:27'),
+(7, 7, 'StarTech.com DisplayPort 1.2 Cable w/ Latches - 6ft / 2m - HBR2 - 4K x 2K Display - Certified DP to DP Video Cable M/M (DISPLPORT6L) - DisplayPort cable - 6 ft', 14, 1, 14, 'Paid', 'Delivered', '2022-11-03 04:56:22', '2022-11-06 04:12:57'),
+(8, 8, 'C2G 8in DisplayPort to VGA Adapter Converter - M/F - DisplayPort cable - 8 in', 37, 3, 111, 'Unpaid', 'Processing', '2022-11-12 04:59:00', '2022-11-12 04:59:00'),
+(9, 9, 'D-Link Cat-5E Transparent RJ45 Connector. Type - RJ45 Connector', 3, 3, 9, 'Unpaid', 'Processing', '2022-11-12 05:00:54', '2022-11-12 05:00:54'),
+(10, 10, 'StarTech.com DisplayPort 1.2 Cable w/ Latches - 6ft / 2m - HBR2 - 4K x 2K Display - Certified DP to DP Video Cable M/M (DISPLPORT6L) - DisplayPort cable - 6 ft', 14, 2, 28, 'Unpaid', 'Processing', '2022-11-12 05:00:54', '2022-11-12 05:00:54'),
+(11, 11, 'C2G 8in DisplayPort to VGA Adapter Converter - M/F - DisplayPort cable - 8 in', 37, 16, 592, 'Paid', 'Shipped', '2022-11-12 22:25:28', '2022-11-13 04:16:30');
 
 -- --------------------------------------------------------
 
@@ -567,17 +634,17 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `products` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `product_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sub_category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sub_sub_category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sub_sub_sub_category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `brand` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `industry` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sub_category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sub_sub_category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sub_sub_sub_category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `brand` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `industry` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -587,11 +654,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `price`, `description`, `image`, `product_type`, `category`, `sub_category`, `sub_sub_category`, `sub_sub_sub_category`, `brand`, `industry`, `created_at`, `updated_at`) VALUES
-(1, 'Rj45', 3, 'Rj45', '1664788460.jpg', 'New', 'Hardware', 'Cables', 'Display Cables', 'VGA', 'Hp', '', NULL, NULL),
+(1, 'D-Link Cat-5E Transparent RJ45 Connector. Type - RJ45 Connector', 3, 'Rj45', '1664788460.jpg', 'New', 'Hardware', 'Cables', 'Display Cables', 'VGA', 'Hp', '', '2022-11-01 07:26:18', '2022-11-01 07:26:31'),
 (2, 'StarTech.com DisplayPort 1.2 Cable w/ Latches - 6ft / 2m - HBR2 - 4K x 2K Display - Certified DP to DP Video Cable M/M (DISPLPORT6L) - DisplayPort cable - 6 ft', 14, 'StarTech.com DisplayPort 1.2 Cable w/ Latches - 6ft / 2m - HBR2 - 4K x 2K Display - Certified DP to DP Video Cable M/M (DISPLPORT6L) - DisplayPort cable - DisplayPort (M) to DisplayPort (M) - 6 ft - latched - black - for P/N: DK31C3HDPDUE, DKM30CHDPD, DKM', '1666771690.jpg', 'new', 'Hardware', 'Cables', 'Display cables', 'USB', 'Select Brand', 'Select Industry', '2022-10-26 02:08:10', '2022-10-26 02:08:10'),
 (3, 'C2G 8in DisplayPort to VGA Adapter Converter - M/F - DisplayPort cable - 8 in', 37, 'C2G 8in DisplayPort to VGA Adapter Converter - M/F - DisplayPort cable - DisplayPort (M) to HD-15 (VGA) (F) - 8 in - latched - black', '1666771774.jpg', 'new', 'Hardware', 'Cables', 'Adapters', 'VGA', 'Select Brand', 'Select Industry', '2022-10-26 02:09:34', '2022-10-26 02:09:34'),
-(4, 'Windows 11', 123, 'Windows 11 is a......', '1666772279.png', 'new', 'Software', 'Operating System', 'Windows', 'Windows 11', 'Microsoft', 'Select Industry', '2022-10-26 02:17:59', '2022-10-26 02:17:59'),
-(5, 'Cisco Meraki Enterprise Cloud Controller - subscription license (3 years) - 1 access point', 209, 'Compatibility Information:	P/N: MR12-HW, MR16-HW, MR18-HW, MR24-HW, MR26-HW, MR32-HW, MR34-HW, MR62-HW, MR66-HW, MR72-HW\r\nCisco Meraki Enterprise Cloud Controller - Subscription license (3 years) - 1 access point - hosted', '1666772645.jpg', 'new', 'Software', 'Cloud', 'Network Application', 'nulll', 'Microsoft', 'Select Industry', '2022-10-26 02:24:05', '2022-10-26 02:24:05');
+(4, 'Windows 11 You have a Windows 11 license.', 123, 'Windows 11 is a......', '1666772279.png', 'new', 'Software', 'Operating System', 'Windows', 'Windows 11', 'Microsoft', 'Select Industry', '2022-10-26 02:17:59', '2022-10-26 02:17:59'),
+(5, 'Cisco Meraki Enterprise Cloud Controller - subscription license (3 years) - 1 access point', 209, 'Compatibility Information:	P/N: MR12-HW, MR16-HW, MR18-HW, MR24-HW, MR26-HW, MR32-HW, MR34-HW, MR62-HW, MR66-HW, MR72-HW\r\nCisco Meraki Enterprise Cloud Controller - Subscription license (3 years) - 1 access point - hosted', '1666772645.jpg', 'new', 'Software', 'Cloud', 'Network Application', 'nulll', 'Microsoft', 'Select Industry', '2022-10-26 02:24:05', '2022-10-26 02:24:05'),
+(6, 'Intel Next Unit of Computing 10 Performance kit - NUC10i3FNKN - mini PC - Core i3 10110U 2.1 GHz - 0 GB - no HDD', 454, 'Intel Next Unit of Computing 10 Performance kit - NUC10i3FNKN - Barebone - mini PC - 1 x Core i3 10110U / 2.1 GHz - RAM 0 GB - UHD Graphics - GigE - WLAN: Bluetooth 5.0, 802.11a/b/g/n/ac/ax', '1667450485.jpg', 'deal', 'Hardware', 'Printer', 'Display Printer', 'HDMI', 'Intel', 'Select Industry', '2022-11-02 22:41:25', '2022-11-02 22:41:25'),
+(7, 'LENOVO 11E G5, CELERON N4100 1.1GHZ, 8GB RAM, 128GB M.2 SSD, NO ODD, 11.6HD, WIN 10 PRO 64BIT, WEBCAM, GRADE A REFURBISHED 1 YEAR WARRANTY', 209, 'LENOVO 11E G5, CELERON N4100 1.1GHZ, 8GB RAM, 128GB M.2 SSD, NO ODD, 11.6HD, WIN 10 PRO 64BIT, WEBCAM, GRADE A REFURBISHED 1 YEAR WARRANTY', '1667452488.jpg', 'refurbished', 'Hardware', 'Printer', 'Display Printer', 'HDMI', 'Lenovo', 'Select Industry', '2022-11-02 23:14:48', '2022-11-02 23:14:48'),
+(8, 'Lexmark B2236dw - printer - B/W - laser', 340, 'Lexmark B2236dw - Printer - B/W - Duplex - laser - A4/Legal - 600 x 600 dpi - up to 36 ppm - capacity: 250 sheets - USB 2.0, LAN, Wi-Fi(n)', '1667456856.jpg', 'deal', 'Hardware', 'Printer', 'Display Printer', 'HDMI', 'Select Brand', 'Select Industry', '2022-11-03 00:27:36', '2022-11-03 00:27:36'),
+(9, 'Absolute Resilience - subscription license (1 year) - 1 device', 456, 'Absolute Resilience - Subscription license (1 year) - 1 device - volume - level 1 (1-2499) - ESD', '1667622099.jpg', 'new', 'Software', 'Cloud', 'Network Application', 'nulll', 'Microsoft', 'Healthcare', '2022-11-04 22:21:39', '2022-11-04 22:21:39'),
+(16, 'Camtasia 2022 - license + Maintenance - 1 user', 329, 'Camtasia 2022 - License + Maintenance - 1 user - volume, commercial - 1-4 licenses - Win, Mac', '1667884464.jpg', 'deal', 'Software', 'Cloud', 'Network Application', 'nulll', 'Intel', 'Select Industry', '2022-11-07 23:14:24', '2022-11-07 23:14:24');
 
 -- --------------------------------------------------------
 
@@ -666,8 +738,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('D3A58zGAz49KAl7QmJMoImcwXCHEGDDO9mhaBh73', NULL, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUHpEa3JyUXhsYWJqTUpYaE5LSDcxUU1abEgyVG1UUnQ0TTZlSjRCTCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzg6Imh0dHA6Ly9sb2NhbGhvc3Qvbmdlbml0L3B1YmxpYy9ibG9ncy8zIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1667044887),
-('SC0wGXmkpcdVPNyg0ryFk3yDcygUmcLKPyqETENX', NULL, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiQUVNb21lajl1WHhJMkJ6dERrcnBwQUlwODdEMzRKWXZ0MFAyOU1LWCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Qvbmdlbml0L3B1YmxpYyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MjY6IjR5VGxUREt1M29KT2Z6RF9jYXJ0X2l0ZW1zIjtPOjMyOiJEYXJyeWxkZWNvZGVcQ2FydFxDYXJ0Q29sbGVjdGlvbiI6Mjp7czo4OiIAKgBpdGVtcyI7YToyOntpOjI7TzozMjoiRGFycnlsZGVjb2RlXENhcnRcSXRlbUNvbGxlY3Rpb24iOjM6e3M6OToiACoAY29uZmlnIjthOjY6e3M6MTQ6ImZvcm1hdF9udW1iZXJzIjtiOjA7czo4OiJkZWNpbWFscyI7aTowO3M6OToiZGVjX3BvaW50IjtzOjE6Ii4iO3M6MTM6InRob3VzYW5kc19zZXAiO3M6MToiLCI7czo3OiJzdG9yYWdlIjtOO3M6NjoiZXZlbnRzIjtOO31zOjg6IgAqAGl0ZW1zIjthOjY6e3M6MjoiaWQiO3M6MToiMiI7czo0OiJuYW1lIjtzOjE1OToiU3RhclRlY2guY29tIERpc3BsYXlQb3J0IDEuMiBDYWJsZSB3LyBMYXRjaGVzIC0gNmZ0IC8gMm0gLSBIQlIyIC0gNEsgeCAySyBEaXNwbGF5IC0gQ2VydGlmaWVkIERQIHRvIERQIFZpZGVvIENhYmxlIE0vTSAoRElTUExQT1JUNkwpIC0gRGlzcGxheVBvcnQgY2FibGUgLSA2IGZ0IjtzOjU6InByaWNlIjtkOjE0O3M6ODoicXVhbnRpdHkiO3M6MToiMSI7czoxMDoiYXR0cmlidXRlcyI7Tzo0MToiRGFycnlsZGVjb2RlXENhcnRcSXRlbUF0dHJpYnV0ZUNvbGxlY3Rpb24iOjI6e3M6ODoiACoAaXRlbXMiO2E6MTp7czo1OiJpbWFnZSI7czoxNDoiMTY2Njc3MTY5MC5qcGciO31zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fXM6MTA6ImNvbmRpdGlvbnMiO2E6MDp7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fWk6MTtPOjMyOiJEYXJyeWxkZWNvZGVcQ2FydFxJdGVtQ29sbGVjdGlvbiI6Mzp7czo5OiIAKgBjb25maWciO2E6Njp7czoxNDoiZm9ybWF0X251bWJlcnMiO2I6MDtzOjg6ImRlY2ltYWxzIjtpOjA7czo5OiJkZWNfcG9pbnQiO3M6MToiLiI7czoxMzoidGhvdXNhbmRzX3NlcCI7czoxOiIsIjtzOjc6InN0b3JhZ2UiO047czo2OiJldmVudHMiO047fXM6ODoiACoAaXRlbXMiO2E6Njp7czoyOiJpZCI7czoxOiIxIjtzOjQ6Im5hbWUiO3M6NDoiUmo0NSI7czo1OiJwcmljZSI7ZDozO3M6ODoicXVhbnRpdHkiO3M6MToiMSI7czoxMDoiYXR0cmlidXRlcyI7Tzo0MToiRGFycnlsZGVjb2RlXENhcnRcSXRlbUF0dHJpYnV0ZUNvbGxlY3Rpb24iOjI6e3M6ODoiACoAaXRlbXMiO2E6MTp7czo1OiJpbWFnZSI7czoxNDoiMTY2NDc4ODQ2MC5qcGciO31zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fXM6MTA6ImNvbmRpdGlvbnMiO2E6MDp7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fXM6MzoidXJsIjthOjA6e31zOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCR1cURPelA0bFlwR3NaUDNrNTU5cXQuWlBscGhWbE1keDBiZHh0UlpLdkxTWmw4VXZpalk4bSI7fQ==', 1667031130);
+('aNoEE7UpEPuSOf4KBS4GfCUalzVbmwIcMN8j2Z0O', 12, '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36', 'YTo4OntzOjY6Il90b2tlbiI7czo0MDoiRGl0U2xzNDJsNVlpRHVVNlZXTXpvNXRyNFlwTHlDbmtKR3NGRkxiaCI7czoxODoiZmxhc2hlcjo6ZW52ZWxvcGVzIjthOjA6e31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czo1MToiaHR0cDovL2xvY2FsaG9zdC9uZ2VuaXQvcHVibGljL2FsbHNvZnR3YXJlX3RlbXBsYXRlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoyNjoiNHlUbFRES3Uzb0pPZnpEX2NhcnRfaXRlbXMiO2E6MDp7fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxMjtzOjIxOiJwYXNzd29yZF9oYXNoX3NhbmN0dW0iO3M6NjA6IiQyeSQxMCR1cURPelA0bFlwR3NaUDNrNTU5cXQuWlBscGhWbE1keDBiZHh0UlpLdkxTWmw4VXZpalk4bSI7fQ==', 1668335478),
+('v3iWA74wtvA4lK1L6lTA6BrRDwSxRkDkCJcFz1jj', NULL, '192.168.0.110', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiamYyOVI5U1NhcVZkQUJPUmc4QVFwQjlNMUhOUlQ4RFJ3RXN6bHlydyI7czoxODoiZmxhc2hlcjo6ZW52ZWxvcGVzIjthOjA6e31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozNDoiaHR0cDovLzE5Mi4xNjguMC4xMTAvbmdlbml0L3B1YmxpYyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1668322736),
+('vm2bMrTfmBP0x1AJrj1cCLl5S7yjKYArTCwJ6Wsf', NULL, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRkd0Mk4xYW1jR1BIV09iN2taeEtZTnNpREVlMGpQNmdwbjBFeUdXbyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jYXJ0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1668322195);
 
 -- --------------------------------------------------------
 
@@ -732,6 +805,33 @@ INSERT INTO `successes` (`id`, `title`, `description`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `supports`
+--
+
+CREATE TABLE `supports` (
+  `id` bigint UNSIGNED NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `company` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `support_topic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `supports`
+--
+
+INSERT INTO `supports` (`id`, `first_name`, `last_name`, `company`, `email`, `phone`, `support_topic`, `comment`, `contact_by`, `created_at`, `updated_at`) VALUES
+(1, 'kawsar', 'khan', 'Ngenit', 'kawsarkhanbd3@gmail.com', '01875510694', 'Order tracking/history', 'dsfsd', 'Phone', '2022-11-10 03:03:15', '2022-11-10 03:03:15');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -756,7 +856,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'Hasiful', 'Hasiful@gmail.com', NULL, '$2y$10$98ZDqnV0KFPXpzeJYTo08.uFLVN8FjMPQo8FLginu7DhilwhS3GXm', NULL, NULL, NULL, 'NSxIqHErTuZiMZboQ4a18XZ3w3dF3EQo6cY71yucL09TsvZmncTICjhXjkmq', NULL, NULL, '2022-09-06 22:43:43', '2022-09-06 22:43:43'),
+(1, 'Hasiful', 'Hasiful@gmail.com', NULL, '$2y$10$98ZDqnV0KFPXpzeJYTo08.uFLVN8FjMPQo8FLginu7DhilwhS3GXm', NULL, NULL, NULL, 'mzxKBNddncf8M6WaFwtm9WY7ouA3B23lrDxcLemxshtM30aXf9tsM9hQ2vl0', NULL, NULL, '2022-09-06 22:43:43', '2022-09-06 22:43:43'),
 (7, 'Motiur', 'motiur922083@gmail.com', '2022-09-12 03:33:41', '$2y$10$k7E0XPM7a.0aBF5nFJCvhOXrmMdT.9FjhlWiQbHFIYwaz5Ayie5pO', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-12 05:54:54', '2022-09-12 05:54:54'),
 (11, 'billal', 'billalhossennn@gmail.com', '2022-09-13 09:14:38', '$2y$10$3tH3pL.UrdyfF76LXfMNMueo86ghCHxLDUOo7OV9f1wr.DcQFYb4a', NULL, NULL, NULL, 'hVyUMrUW9BJUql2IPljqWYh9LJmC8HbZNPpQg5ftrtwFH8fFXepcDF7WHAkW', NULL, NULL, '2022-09-12 23:14:23', '2022-09-18 21:48:38'),
 (12, 'Billal Hossen', 'admin@gmail.com', '2022-09-13 08:01:51', '$2y$10$uqDOzP4lYpGsZP3k559qt.ZPlphVlMdx0bdxtRZKvLSZl8UvijY8m', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-13 00:52:07', '2022-09-13 00:52:07'),
@@ -764,8 +864,36 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 (24, 'Billal', 'billal.cinebaz@gmail.com', '2022-09-15 03:50:03', '$2y$10$442lsQc28LEQo8X0d14B.eDcUtobAv6fYp7EMfFxEP8OslLHD/TVK', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-15 03:49:41', '2022-09-15 03:50:03'),
 (27, 'dev', 'dev1.ngenit@gmail.com', '2022-09-19 04:22:31', '$2y$10$.jEjR98Aya7/2x8JvTg.reIlikbeAIYHGg36YVDQJ8Dc.uQtEn34.', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17 22:01:34', '2022-09-17 22:04:09'),
 (28, 'hasiful', 'Hasiful@ggmail.com', '2022-09-18 11:37:14', '$2y$10$nhixvO/i4FfEBG/0RJuigOUKMoUDiiYvKxCOmLpvKo9kbWvGh7ZnG', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-18 05:35:40', '2022-09-18 05:35:40'),
-(29, 'Motiur Rahman', 'dev4.ngenit@gmail.com', '2022-09-24 22:38:10', '$2y$10$RlFQk8mkPNTYwgYtTVDOAOp9IHXy3bHxTOa.rPu/KjO8v709A0iWa', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-24 22:37:47', '2022-09-24 22:38:10'),
-(31, 'rubaiyat', 'rubaiyat@gmail.com', '2022-09-26 22:18:01', '$2y$10$Ezcm.v3fJDPmgZ26vvEdRu5uFBB0KpKoelFdHJ2wAR4nHHYJwdAaa', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-26 22:18:18', '2022-09-26 22:18:18');
+(31, 'rubaiyat', 'rubaiyat@gmail.com', '2022-09-26 22:18:01', '$2y$10$Ezcm.v3fJDPmgZ26vvEdRu5uFBB0KpKoelFdHJ2wAR4nHHYJwdAaa', NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-26 22:18:18', '2022-09-26 22:18:18'),
+(32, 'Motiur Rahman', 'dev4.ngenit@gmail.com', '2022-11-03 04:54:13', '$2y$10$iTeDoW8cSz6NZNR73eBmX.tizLhKuQK1wRcwfSb0T9F/DseaxB/qK', NULL, NULL, NULL, NULL, NULL, NULL, '2022-11-03 04:53:47', '2022-11-03 04:54:13'),
+(33, 'David', 'David@gmail.com', '2022-11-12 09:43:17', '$2y$10$59o/nrRXxN7/in6PyTKBPu6021H4weji7ycNr1AdAt/yuOyTfKoKa', NULL, NULL, NULL, NULL, NULL, NULL, '2022-11-12 03:25:43', '2022-11-12 03:25:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_infos`
+--
+
+CREATE TABLE `user_infos` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `phone` int NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zip` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_infos`
+--
+
+INSERT INTO `user_infos` (`id`, `user_id`, `phone`, `address`, `city`, `state`, `zip`, `country`, `created_at`, `updated_at`) VALUES
+(1, 33, 0, '', '', '', '', '', '2022-11-12 03:25:51', '2022-11-12 03:25:51'),
+(2, 12, 1787722178, 'Keranigaj', 'Dhaka', 'Dhaka', '1310', 'Bangladesh', '2022-11-12 09:28:12', '2022-11-12 09:28:12');
 
 -- --------------------------------------------------------
 
@@ -867,6 +995,12 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `home_page_builders`
 --
 ALTER TABLE `home_page_builders`
@@ -909,6 +1043,12 @@ ALTER TABLE `model_has_permissions`
 ALTER TABLE `model_has_roles`
   ADD PRIMARY KEY (`role_id`,`model_id`,`model_type`),
   ADD KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`);
+
+--
+-- Indexes for table `newsletters`
+--
+ALTER TABLE `newsletters`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `orders`
@@ -1007,11 +1147,24 @@ ALTER TABLE `successes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `supports`
+--
+ALTER TABLE `supports`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indexes for table `user_infos`
+--
+ALTER TABLE `user_infos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_infos_user_id_foreign` (`user_id`);
 
 --
 -- Indexes for table `widget1`
@@ -1033,19 +1186,19 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `category_page_builders`
 --
 ALTER TABLE `category_page_builders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `clients`
@@ -1072,6 +1225,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `home_page_builders`
 --
 ALTER TABLE `home_page_builders`
@@ -1087,19 +1246,25 @@ ALTER TABLE `industries`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT for table `newsletters`
+--
+ALTER TABLE `newsletters`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `page_builders`
@@ -1123,7 +1288,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -1150,10 +1315,22 @@ ALTER TABLE `successes`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `supports`
+--
+ALTER TABLE `supports`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `user_infos`
+--
+ALTER TABLE `user_infos`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `widget1`
@@ -1220,37 +1397,16 @@ ALTER TABLE `model_has_roles`
   ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `order_details`
 --
 ALTER TABLE `order_details`
   ADD CONSTRAINT `order_details_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `page_builders`
+-- Constraints for table `user_infos`
 --
-ALTER TABLE `page_builders`
-  ADD CONSTRAINT `page_builders_sec1_id_foreign` FOREIGN KEY (`sec1_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `page_builders_sec2_id_foreign` FOREIGN KEY (`sec2_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `page_builders_sec3_id_foreign` FOREIGN KEY (`sec3_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `page_builders_sec4_id_foreign` FOREIGN KEY (`sec4_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `page_builders_section1_id_foreign` FOREIGN KEY (`section1_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `page_builders_section2_id_foreign` FOREIGN KEY (`section2_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `page_builders_section3_id_foreign` FOREIGN KEY (`section3_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `page_builders_section4_id_foreign` FOREIGN KEY (`section4_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `role_has_permissions`
---
-ALTER TABLE `role_has_permissions`
-  ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+ALTER TABLE `user_infos`
+  ADD CONSTRAINT `user_infos_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

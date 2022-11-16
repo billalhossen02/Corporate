@@ -1,4 +1,4 @@
-<header class="header_section">
+<header class="header_section fixed-top">
     <!-- header_top -->
     <div class="header_top">
         <div class="header_top_wrapper">
@@ -38,11 +38,11 @@
                             <!-- Top hover sub nav -->
                             <div class="top_header_subNav">
                                 <ul>
-                                    <li><a href="">Chat With Us</a></li>
+                                    <li><a href="javascript:void(Tawk_API.toggle())">Chat With Us</a></li>
                                     <li><a href="{{ url('/contact') }}">Contact Us</a></li>
-                                    <li><a href="">Call Support</a></li>
-                                    <li><a href="">Knowdlge Base</a></li>
-                                    <li><a href="">Web Support Assistance</a></li>
+                                    <li><a href="{{ url('/contact#contact_call') }}">Call Support</a></li>
+                                    <li><a href="{{ url('/knowledge') }}">Knowdlge Base</a></li>
+                                    <li><a href="{{ url('/support') }}">Web Support Assistance</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -75,7 +75,9 @@
                                     <i class="fa-solid fa-user-large"></i> {{ Auth::user()->name }}
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="{{ url('client/dashboard') }}">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('user/dashboard') }}">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('user/profile') }}">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('user/product') }}">My Product</a></li>
                                     <li><a class="dropdown-item" href="{{ url('order/track') }}">Order List</a></li>
                                     <li>
                                         <div class="dropdown-divider"></div>
@@ -204,24 +206,15 @@
                                         <div class="sub_nav_item_list">
                                             <ul>
 
-                                                @foreach (categories()->take(5) as $item)
-                                                    <li>
-                                                        <a href="">
-                                                            <form method="GET"
-                                                                action="{{ url('product/filter') }}">
-                                                                <input type="hidden" name="filtercategory[]"
-                                                                    value="{{ $item->category }}">
-                                                                <button style="all:unset" type="submit"
-                                                                    href="{{ route('filter') }}"
-                                                                    class="common_button"><span>{{ $item->category }}</span></button>
-                                                                <span><i style="
-                                                                font-size: 12px;
-                                                                color: var(--mainColor);"
-                                                                        class="fa-solid fa-angle-right"></i></span>
-                                                            </form>
-                                                        </a>
-                                                    </li>
-                                                @endforeach
+                                                <li>
+                                                    <a href="{{ url('common_hardware_shop') }}">
+                                                        Hardware
+                                                    </a>
+
+                                                    <a href="{{ url('allsoftware_template') }}">
+                                                        Software
+                                                    </a>
+                                                </li>
 
                                                 <li>
                                                     <a href="{{ route('filter') }}">
@@ -313,7 +306,7 @@
                                                 @endforeach
 
                                                 <li>
-                                                    <a href="{{ route('blogs') }}">
+                                                    <a href="{{ route('view_industries') }}">
                                                         <span>View All industries</span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
@@ -367,7 +360,7 @@
                                                 </li>
 
                                                 <li>
-                                                    <a href="">
+                                                    <a href="{{ url('/service') }}">
                                                         <span>View All Services </span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
@@ -378,12 +371,6 @@
                                     </div>
                                     <!-- item -->
 
-                                </div>
-                            </div>
-                            <!-- submenu bottom -->
-                            <div class="sub_menu_botttom">
-                                <div class="sub_menu_botttom_content">
-                                    <a href="" class="sub_botttom_text">View all solutions</a>
                                 </div>
                             </div>
                         </div>
@@ -592,13 +579,6 @@
 
                                 </div>
                             </div>
-                            <!-- submenu bottom -->
-                            <div class="sub_menu_botttom">
-                                <div class="sub_menu_botttom_content">
-                                    <a href="" class="sub_botttom_text">View all solutions</a>
-                                </div>
-                            </div>
-                        </div>
                     </li>
 
                     <!-- nav item -->
@@ -632,28 +612,28 @@
                                             <ul>
                                                 <li>
                                                     <a href="">
-                                                        <span>Optimum</span>
+                                                        <span>Bangladesh</span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
                                                 </li>
 
                                                 <li>
                                                     <a href="">
-                                                        <span>Intimicy</span>
+                                                        <span>Nepal</span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
                                                 </li>
 
                                                 <li>
                                                     <a href="">
-                                                        <span>Leads Innovation</span>
+                                                        <span>Butan</span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
                                                 </li>
 
                                                 <li>
                                                     <a href="">
-                                                        <span>Yongkhar</span>
+                                                        <span>Myanmar</span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
                                                 </li>
@@ -686,7 +666,7 @@
                                             <ul>
                                                 <li>
                                                     <a href="">
-                                                        <span> icddr'b
+                                                        <span> Public Sector
                                                         </span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
@@ -694,7 +674,7 @@
 
                                                 <li>
                                                     <a href="">
-                                                        <span>UNDP
+                                                        <span>Academic
                                                         </span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
@@ -702,7 +682,7 @@
 
                                                 <li>
                                                     <a href="">
-                                                        <span> Chevron
+                                                        <span> FMG
                                                         </span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
@@ -710,7 +690,7 @@
 
                                                 <li>
                                                     <a href="">
-                                                        <span>Bangladesh Bank</span>
+                                                        <span>MNC</span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
                                                 </li>
@@ -744,7 +724,7 @@
                                             <ul>
                                                 <li>
                                                     <a href="">
-                                                        <span>Acronis
+                                                        <span>Software
                                                         </span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
@@ -752,21 +732,21 @@
 
                                                 <li>
                                                     <a href="">
-                                                        <span>Riverbed</span>
+                                                        <span>Hardware</span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
                                                 </li>
 
                                                 <li>
                                                     <a href="">
-                                                        <span>Pepperel + Fuschs</span>
+                                                        <span>Solution</span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
                                                 </li>
 
                                                 <li>
                                                     <a href="">
-                                                        <span>Schnieder </span>
+                                                        <span>Service </span>
                                                         <span><i class="fa-solid fa-angle-right"></i></span>
                                                     </a>
                                                 </li>
@@ -834,12 +814,6 @@
                                     </div>
                                     <!-- item -->
 
-                                </div>
-                            </div>
-                            <!-- submenu bottom -->
-                            <div class="sub_menu_botttom">
-                                <div class="sub_menu_botttom_content">
-                                    <a href="" class="sub_botttom_text">View all solutions</a>
                                 </div>
                             </div>
                         </div>
@@ -1057,12 +1031,6 @@
                                     </div>
                                     <!-- item -->
 
-                                </div>
-                            </div>
-                            <!-- submenu bottom -->
-                            <div class="sub_menu_botttom">
-                                <div class="sub_menu_botttom_content">
-                                    <a href="" class="sub_botttom_text">View all solutions</a>
                                 </div>
                             </div>
                         </div>

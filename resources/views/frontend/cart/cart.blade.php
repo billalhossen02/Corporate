@@ -87,7 +87,7 @@
                                 <th>Title</th>
                                 <th>Unit Price</th>
                                 <th>Quantity</th>
-                                <th style="width: 125px">Total price</th>
+                                <th style="width: 170px">Total price</th>
                                 <th>Action</th>
 
                             </thead>
@@ -121,7 +121,8 @@
                                                         <!-- cart product price -->
                                                         <div class="cart_product_price cart_auto_price">
                                                             <small>USD</small>
-                                                            $<span class="unitCart_price">{{ $item->price }}</span>
+                                                            $<span
+                                                                class="unitCart_price">{{ number_format($item->price, 2) }}</span>
                                                         </div>
                                                     </td>
                                                     <td>
@@ -143,7 +144,7 @@
                                                     <td>
                                                         <div class="cart_product_price1"> <small>USD</small> $<span
                                                                 class="tp"
-                                                                id="tp">{{ $item->price * $item->quantity }}</span>
+                                                                id="tp">{{ number_format($item->price * $item->quantity, 2) }}</span>
                                                         </div>
                                                     </td>
 
@@ -244,14 +245,14 @@
                                 <span>Subtotal</span>
                                 {{-- <input type="hidden" id="getTotal" value="{{ Cart::getTotal() }}"> --}}
                                 <div>
-                                    <span>$</span><span id="totalPrice1">{{ number_format(Cart::getTotal()) }}</span>
+                                    <span>$</span><span id="totalPrice1">{{ number_format(Cart::getTotal(), 2) }}</span>
                                 </div>
                             </li>
                             <li class=""><span>*Estimated Shipping</span>
-                                <span><small>USD</small>${{ number_format(0) }}</span>
+                                <span><small>USD</small>${{ number_format(0, 2) }}</span>
                             </li>
                             <li class=""><span>*Tax estimate</span>
-                                <span><small>USD</small>${{ number_format(0) }}</span>
+                                <span><small>USD</small>${{ number_format(0, 2) }}</span>
                             </li>
                         </ul>
 
@@ -260,7 +261,7 @@
 
                             <div>
                                 <span>$</span><span id="totalPrice2">
-                                    {{ number_format(Cart::getTotal()) }}</span>
+                                    {{ number_format(Cart::getTotal(), 2) }}</span>
                             </div>
                         </li>
                         <input id='checkout' type="hidden" value="{{ Cart::getTotal() }}">
@@ -292,7 +293,8 @@
                     .innerText)
                 var getTotalQuantity = parseInt(document.getElementsByClassName("cart_auto")[index].value)
                 var getTotalCart = cardPriceAuto * getTotalQuantity
-                var gtp = document.getElementsByClassName("tp")[index].innerText = getTotalCart;
+                var gtp = document.getElementsByClassName("tp")[index].innerText = getTotalCart
+                    .toLocaleString();
 
                 allSum();
 
@@ -308,8 +310,8 @@
                 total += total2;
             });
             console.log(total);
-            document.getElementById('totalPrice1').innerText = total.toLocaleString();
-            document.getElementById('totalPrice2').innerText = total.toLocaleString();
+            document.getElementById('totalPrice1').innerText = (total.toLocaleString()).toFixed(2);
+            document.getElementById('totalPrice2').innerText = (total.toLocaleString()).toFixed(2);
         }
     </script>
 
@@ -322,25 +324,18 @@
     <script>
         var buttonAdd = document.querySelectorAll('.cart_input')
         var cartUpdateBtn = document.querySelectorAll('.update_button')
-
         cartUpdateBtn.forEach(element => {
             element.style.cssText = 'all:unset;display:block;cursor:pointer'
         });
     </script>
     <script>
-        function a() {
-            location.reload();
-        }
-
         $(document).on('change', '#quantity', function(event) {
             event.preventDefault();
-
             let form = $(this).closest('.myForm');
             let id = form.find("input[name=id]").val();
             let quantity = form.find("input[name=quantity]").val();
             let price = form.find("input[name=price]").val();
             let href = $(this).attr('data-attr');
-
             $.ajax({
                 type: "POST",
                 data: {
@@ -352,22 +347,9 @@
                 success: function(data) {
                     console.log("Success");
                     $("#cart_summary").load(window.location.href + " #cart_summary");
-
                 }
-
             })
-
-            //    var getTotal = $("#getTotal").val();
-            //    var total = quantity * price
-
-            //    $("#totalPrice1").html( getTotal + total)
-            //    $("#totalPrice2").html( getTotal + total)
-
-            //    $(".cart_product_price1").html(total.toLocaleString())
-
-
         });
-
         $("#mediumButton2").on("click", function(e) {
             e.preventDefault();
             $("#mediumModal").modal("hide");

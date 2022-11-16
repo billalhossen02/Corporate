@@ -1,14 +1,15 @@
 @extends('frontend.master')
 
 @section('content')
+    @include('frontend.header')
 
-@include('frontend.header')
-
-     <!--========Header Title==========-->
-     <section class="common_product_header" style="background-image:url('{{ asset('assets/frontend/image/buy-category-hero.jpg')}}')">
+    <!--========Header Title==========-->
+    <section class="common_product_header"
+        style="background-image:url('{{ asset('assets/frontend/image/buy-category-hero.jpg') }}')">
         <div class="container">
             <h1>Ready to shop?</h1>
-            <h3>Explore our product categories to see options for hardware, software and accessories. Use our configurators for advanced help with your selection. And, find discounts under our tech deals.</h3>
+            <h3>Explore our product categories to see options for hardware, software and accessories. Use our configurators
+                for advanced help with your selection. And, find discounts under our tech deals.</h3>
 
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-2"></div>
@@ -42,38 +43,39 @@
 
                 <!-- product_item -->
                 @foreach ($products as $item)
-                <div class="product_item">
-                    <!-- image -->
-                    <div class="product_item_thumbnail">
-                        <img src="{{ asset('storage/Product/'.$item->image) }}" alt="">
-                    </div>
-
-                    <!-- product content -->
-                    <div class="product_item_content">
-                        <a href="{{ route('product',['id' => $item->id]) }}" class="product_item_content_name">{{ $item->title }}</a>
-
-                        <!-- price -->
-                        <div class="product_item_price">
-                            <span class="price_currency">usd</span>
-                            <span class="price_currency_value">${{ $item->price }}</span>
+                    <div class="product_item">
+                        <!-- image -->
+                        <div class="product_item_thumbnail">
+                            <img src="{{ asset('storage/Product/' . $item->image) }}" alt="">
                         </div>
 
-                        <form class="myForm">
-                            @csrf
-                            <input type="hidden" value="{{ $item->id }}"   name="id" id="id">
-                            <input type="hidden" value="{{ $item->title }}" name="name" id="name">
-                            <input type="hidden" value="{{ $item->price }}" name="price" id="price">
-                            <input type="hidden" value="{{ $item->image }}" name="image" id="image">
-                            <input type="hidden" value="1" name="quantity" id="quantity">
-                            <button type="submit" class="product_button product_button_change" data-toggle="modal" id="addToBasket"
-                                data-target="#mediumModal"
-                                data-attr="{{ route('modal', ['id' => $item->id]) }}">Add to Basket</button>
-                        </form>
-                        <!-- button -->
-                    </div>
+                        <!-- product content -->
+                        <div class="product_item_content">
+                            <a href="{{ route('product', ['id' => $item->id]) }}"
+                                class="product_item_content_name">{{ $item->title }}</a>
 
-                </div>
-                <!-- product item -->
+                            <!-- price -->
+                            <div class="product_item_price">
+                                <span class="price_currency">usd</span>
+                                <span class="price_currency_value">${{ $item->price }}</span>
+                            </div>
+
+                            <form class="myForm">
+                                @csrf
+                                <input type="hidden" value="{{ $item->id }}" name="id" id="id">
+                                <input type="hidden" value="{{ $item->title }}" name="name" id="name">
+                                <input type="hidden" value="{{ $item->price }}" name="price" id="price">
+                                <input type="hidden" value="{{ $item->image }}" name="image" id="image">
+                                <input type="hidden" value="1" name="quantity" id="quantity">
+                                <button type="submit" class="product_button product_button_change" data-toggle="modal"
+                                    id="addToBasket" data-target="#mediumModal"
+                                    data-attr="{{ route('modal', ['id' => $item->id]) }}">Add to Basket</button>
+                            </form>
+                            <!-- button -->
+                        </div>
+
+                    </div>
+                    <!-- product item -->
                 @endforeach
             </div>
         </div>
@@ -91,12 +93,12 @@
         <div class="row">
             <!--Category item-->
             @foreach ($categories as $item)
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 p-4">
-                <img class="img-fluid mb-4" src="{{ asset('storage/Category/'.$item->sub_img) }}" alt="">
-                <div class="common_product_item_text">
-                    <a href="{{ url('category.html/'.$item->sub_category) }}">{{ $item->sub_category }}</a>
+                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 p-4">
+                    <img class="img-fluid mb-4" src="{{ asset('storage/Category/' . $item->sub_img) }}" alt="">
+                    <div class="common_product_item_text">
+                        <a href="{{ url('category.html/' . $item->sub_category) }}">{{ $item->sub_category }}</a>
+                    </div>
                 </div>
-            </div>
             @endforeach
         </div>
 
@@ -108,7 +110,8 @@
         <div class="transform_devices_wrapper">
             <div class="row" style="border: 1px solid #e3e3e3;">
                 <div class="col-lg-6 col-md-6 col-sm-12 p-0">
-                    <img class="img-fluid" src="{{ asset('assets/frontend/image/windows-11-with-cad-drawer.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ asset('assets/frontend/image/windows-11-with-cad-drawer.jpg') }}"
+                        alt="">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 transform_devices_blog">
                     <img src="images/windows-11.png" alt="">
@@ -122,10 +125,13 @@
     <!-----Transform your devices----->
 
     <!--=====Need Help Finding Prodcut======-->
-    <section class="need_help_finding_prodcut" style="background-image:url('{{ asset('assets/frontend/image/help-background-imges.jpg')}}')">
+    <section class="need_help_finding_prodcut"
+        style="background-image:url('{{ asset('assets/frontend/image/help-background-imges.jpg') }}')">
         <div class="container">
             <h2>Need help finding the right product?</h2>
-            <h3>Our product selectors and configurators will pinpoint the right item for your organization. These easy-to-use Insight Intelligent Technology™ tools let you choose your needs and requirements, and then generate the results that are the best match.</h3>
+            <h3>Our product selectors and configurators will pinpoint the right item for your organization. These
+                easy-to-use Insight Intelligent Technology™ tools let you choose your needs and requirements, and then
+                generate the results that are the best match.</h3>
             <div class="d-flex justify-content-center">
                 <a href="#" class="finding_product_btn">Explore our configurators</a>
             </div>
@@ -143,8 +149,10 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 technolgy_deals_blog">
                     <h2>Unbeatable technology deals</h2>
-                    <p>Explore <a href="#">discounts,</a> <a href="#">refurbished products</a>  and limited-time offers. From laptops to cables, accessories and printers, we offer the technology you need at affordable prices — you gain the option of discounted pricing from a variety of brands.</p><br>
-                    <a href="{{ url('product/filter') }}" class="common_button">Shop</a>
+                    <p>Explore <a href="#">discounts,</a> <a href="#">refurbished products</a> and limited-time
+                        offers. From laptops to cables, accessories and printers, we offer the technology you need at
+                        affordable prices — you gain the option of discounted pricing from a variety of brands.</p><br>
+                    <a href="{{ url('techdeal.html') }}" class="common_button">Shop & Save</a>
                 </div>
             </div>
         </div>
@@ -162,21 +170,23 @@
         <!--Product Category-->
         <div class="row">
             @foreach ($brands as $item)
-            <!--Category item-->
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 p-4">
-                <img class="img-fluid mb-4" src="{{ asset('storage/Brand/'.$item->image) }}" alt="">
-                <div class="common_product_item_text">
-                    <a style="font-size: 18px" href="{{ url('hardware/'.$item->title) }}">Shop {{ $item->title }}</a>
+                <!--Category item-->
+                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 p-4">
+                    <img class="img-fluid mb-4" src="{{ asset('storage/Brand/' . $item->image) }}" alt="">
+                    <div class="common_product_item_text">
+                        <a style="font-size: 18px" href="{{ url('hardware/' . $item->title) }}">Shop
+                            {{ $item->title }}</a>
+                    </div>
                 </div>
-            </div>
             @endforeach
         </div>
         <div class="d-flex justify-content-center mt-4">
             <form method="GET" action="{{ url('product/filter') }}"><button type="submit" class="common_button">
-                @foreach ($brands as $item)
-                <input type="hidden" name="filterbrand[]" value="{{ $item->title }}">
-                @endforeach
-                Shop all brands</button>
+                    @foreach ($brands as $item)
+                        <input type="hidden" name="filterbrand[]" value="{{ $item->title }}">
+                    @endforeach
+                    Shop all brands
+                </button>
             </form>
         </div>
     </section>
@@ -184,5 +194,4 @@
     <br>
 
     @include('frontend.footer')
-
 @endsection

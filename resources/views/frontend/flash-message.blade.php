@@ -32,8 +32,12 @@
 
 @if ($errors->any())
     <div class="alert alert-danger">
-        <button type="button" class="btn-sm pull-right" style="border:none; background:transparent"
+        <button type="button" class="btn-sm pull-right" style="border:none; background:transparent; float: right;"
             data-dismiss="alert">x</button>
-        Please check the form below for errors
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
 @endif

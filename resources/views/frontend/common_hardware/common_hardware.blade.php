@@ -1,9 +1,10 @@
-@extends("frontend.master")
+@extends('frontend.master')
 @section('content')
-
     <!-- banner single page start -->
 
-    <section class="banner_single_page">
+    @include('frontend.header')
+
+    <section class="banner_single_page" style="background-image:url('{{ asset('storage/Banner/1664260881.jpg') }}')">
         <div class="container">
             <div class="single_banner_content">
                 <!-- image -->
@@ -12,7 +13,9 @@
                 </div>
                 <!-- heading -->
                 <h1 class="single_banner_heading" style="font-size: 55px">Live and work effortlessly </h1>
-                <p class="single_banner_text">Apple® next-generation products, available from Insight, will change the way you work and connect.</p>
+                <p class="single_banner_text">Apple® next-generation products, available from Insight, will change the way
+                    you
+                    work and connect.</p>
                 <!-- single banner button -->
                 <div class="single_buttton_wrapper">
                     <a href="" class="single_banner_button">Talk to a specialist</a>
@@ -32,7 +35,8 @@
             <!-- section title -->
             <div class="section_title">
                 <h3 class="title_top_heading">Surface is the answer.</h3>
-                <p class="title_tex_content">You want a tablet, but you need a laptop. Microsoft Surface®, available from Insight, offers the best of both.</p>
+                <p class="title_tex_content">You want a tablet, but you need a laptop. Microsoft Surface®, available from
+                    Insight, offers the best of both.</p>
             </div>
 
             <!-- wrapper -->
@@ -44,12 +48,13 @@
                     <div class="apple_brand_thumbnail">
                         <img src="assets/frontend/image/cart/laptop-mac.png" alt="">
                     </div>
-                    
+
                     {{-- content --}}
 
                     <div class="apple_brand_content">
                         <p class="apple_brand_name">Mac</p>
-                        <p class="apple_brand_text">Game-changing performance, simplified IT and excellent value prove that Mac™ means business.</p>
+                        <p class="apple_brand_text">Game-changing performance, simplified IT and excellent value prove that
+                            Mac™ means business.</p>
                         <a href="" class="product_button" tabindex="0">Add to Basket</a>
                     </div>
                 </div>
@@ -60,12 +65,13 @@
                     <div class="apple_brand_thumbnail">
                         <img src="assets/frontend/image/cart/iPad.png" alt="">
                     </div>
-                    
+
                     {{-- content --}}
 
                     <div class="apple_brand_content">
                         <p class="apple_brand_name">iPad</p>
-                        <p class="apple_brand_text">Unique capability. Unlimited possibilities. Versatility is in the family — there’s an iPad® for everyone.</p>
+                        <p class="apple_brand_text">Unique capability. Unlimited possibilities. Versatility is in the family
+                            — there’s an iPad® for everyone.</p>
                         <a href="" class="product_button" tabindex="0">Add to Basket</a>
                     </div>
                 </div>
@@ -76,12 +82,13 @@
                     <div class="apple_brand_thumbnail">
                         <img src="assets/frontend/image/cart/iPhone.png" alt="">
                     </div>
-                    
+
                     {{-- content --}}
 
                     <div class="apple_brand_content">
                         <p class="apple_brand_name">iPhone</p>
-                        <p class="apple_brand_text">Ultimate speed. Magical displays. Extraordinary cameras. iPhone® devices deliver a fresh experience..</p>
+                        <p class="apple_brand_text">Ultimate speed. Magical displays. Extraordinary cameras. iPhone® devices
+                            deliver a fresh experience..</p>
                         <a href="" class="product_button" tabindex="0">Add to Basket</a>
                     </div>
                 </div>
@@ -116,7 +123,8 @@
 
                         <!-- product content -->
                         <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard and mouse set - QWERTY - US - black</a>
+                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
+                                and mouse set - QWERTY - US - black</a>
 
                             <!-- price -->
                             <div class="product_item_price">
@@ -141,7 +149,8 @@
 
                         <!-- product content -->
                         <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard and mouse set - QWERTY - US - black</a>
+                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
+                                and mouse set - QWERTY - US - black</a>
 
                             <!-- price -->
                             <div class="product_item_price">
@@ -167,7 +176,8 @@
 
                         <!-- product content -->
                         <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard and mouse set - QWERTY - US - black</a>
+                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
+                                and mouse set - QWERTY - US - black</a>
 
                             <!-- price -->
                             <div class="product_item_price">
@@ -194,7 +204,8 @@
 
                         <!-- product content -->
                         <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard and mouse set - QWERTY - US - black</a>
+                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
+                                and mouse set - QWERTY - US - black</a>
 
                             <!-- price -->
                             <div class="product_item_price">
@@ -220,7 +231,8 @@
 
                         <!-- product content -->
                         <div class="product_item_content">
-                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard and mouse set - QWERTY - US - black</a>
+                            <a href="" class="product_item_content_name">Microsoft Wireless Desktop 2000 - keyboard
+                                and mouse set - QWERTY - US - black</a>
 
                             <!-- price -->
                             <div class="product_item_price">
@@ -255,7 +267,9 @@
 
                     <div class="solution_feature_title">Great tools. Great price.</div>
 
-                    <p class="solution_feature_text">Insight and Apple Financial Services (AFS) make it even easier for your organization to bring Apple products into your workplace cost-effectively. With a variety of flexible solutions, we maximize the affordability of Mac and iPad devices for your organization.</p>
+                    <p class="solution_feature_text">Insight and Apple Financial Services (AFS) make it even easier for
+                        your organization to bring Apple products into your workplace cost-effectively. With a variety of
+                        flexible solutions, we maximize the affordability of Mac and iPad devices for your organization.</p>
 
                     <a href="" class="product_button">Learn More</a>
 
@@ -282,7 +296,9 @@
 
                     <div class="solution_feature_title">Mac</div>
 
-                    <p class="solution_feature_text">Meet the notebooks and desktops that continue to exceed expectations. The latest Mac family is packed with crisp graphics capabilities and the supercharged Apple M1 chip. In every size, they're ideal for getting work done at lightning speed.</p>
+                    <p class="solution_feature_text">Meet the notebooks and desktops that continue to exceed expectations.
+                        The latest Mac family is packed with crisp graphics capabilities and the supercharged Apple M1 chip.
+                        In every size, they're ideal for getting work done at lightning speed.</p>
 
                     <a href="" class="product_button">Shop Now</a>
 
@@ -310,7 +326,8 @@
 
                     <div class="solution_feature_title">iPad</div>
 
-                    <p class="solution_feature_text">Make work fun with an iconic tablet. Four models let you jot down notes with Apple Pencil®, add a keyboard and work from anywhere — the way you want to work.
+                    <p class="solution_feature_text">Make work fun with an iconic tablet. Four models let you jot down
+                        notes with Apple Pencil®, add a keyboard and work from anywhere — the way you want to work.
                     </p>
 
                     <a href="" class="product_button">Shop Now</a>
@@ -338,7 +355,10 @@
 
                     <div class="solution_feature_title">Apple TV</div>
 
-                    <p class="solution_feature_text">Watch movies and shows in amazing 4K High Dynamic Range (HDR) quality. Apple TV® 4K keeps you up to date with content from apps such as Netflix®, Hulu® and ESPN®. You can also stream live sports and the news, and browse content from more than 60 video services without switching from one app to the next.
+                    <p class="solution_feature_text">Watch movies and shows in amazing 4K High Dynamic Range (HDR) quality.
+                        Apple TV® 4K keeps you up to date with content from apps such as Netflix®, Hulu® and ESPN®. You can
+                        also stream live sports and the news, and browse content from more than 60 video services without
+                        switching from one app to the next.
                     </p>
                     <a href="" class="product_button">Shop Now</a>
 
@@ -365,7 +385,9 @@
 
                     <div class="solution_feature_title">iPhone</div>
 
-                    <p class="solution_feature_text">Combining incredible designs and advanced features, the iPhone is an experience you won’t forget. Capture your favorite moments with an enhanced dual camera, interact in a magical way with Dynamic Island and go at the speed of lightning with the A16 Bionic Chip.</p>
+                    <p class="solution_feature_text">Combining incredible designs and advanced features, the iPhone is an
+                        experience you won’t forget. Capture your favorite moments with an enhanced dual camera, interact in
+                        a magical way with Dynamic Island and go at the speed of lightning with the A16 Bionic Chip.</p>
 
                     <a href="" class="product_button">Learn more</a>
 
@@ -392,7 +414,9 @@
 
                     <div class="solution_feature_title">Apple Watch</div>
 
-                    <p class="solution_feature_text">Take your applications wherever you go. The Apple Watch® family seamlessly integrates between your iPhone and other Apple devices, so you can stay connected anywhere and never miss an important notification.
+                    <p class="solution_feature_text">Take your applications wherever you go. The Apple Watch® family
+                        seamlessly integrates between your iPhone and other Apple devices, so you can stay connected
+                        anywhere and never miss an important notification.
                     </p>
                     <a href="" class="product_button">Shop Now</a>
 
@@ -419,7 +443,10 @@
 
                     <div class="solution_feature_title">Maximize your Apple investment.</div>
 
-                    <p class="solution_feature_text">Together, Insight and Apple offer solutions that will modernize your digital workplace environment. Our services were developed based on Apple’s best practices to help you deploy and manage the consumption of Apple devices at scale, achieving full ecosystem integration.</p>
+                    <p class="solution_feature_text">Together, Insight and Apple offer solutions that will modernize your
+                        digital workplace environment. Our services were developed based on Apple’s best practices to help
+                        you deploy and manage the consumption of Apple devices at scale, achieving full ecosystem
+                        integration.</p>
 
                     <a href="" class="product_button">Learn more</a>
 
@@ -530,6 +557,4 @@
     </div>
 
     <!-- feature content end-->
-
-@endsection 
-
+@endsection

@@ -273,8 +273,8 @@
                         <li><a href="{{ route('shop.html') }}">Product categories</a></li>
                         <li><a href="{{ url('partner.html') }}">Brands</a></li>
                         <li><a href="{{ url('techdeal.html') }}">Tech deals</a></li>
-                        <li><a>Account benefits</a></li>
-                        <li><a href="{{ 'techdeal.html/#refurb' }}">Refurbished products</a></li>
+                        <li><a href="{{ url('account_benefits') }}">Account benefits</a></li>
+                        <li><a href="{{ url('techdeal.html/#refurb') }}">Refurbished products</a></li>
                     </ul>
                 </div>
 

@@ -162,6 +162,7 @@ dl, ol, ul {
 .main_header {
     padding: 0px 20px;
     position: relative;
+    background: #fff;
 }
 
 .main_header_wrapper {

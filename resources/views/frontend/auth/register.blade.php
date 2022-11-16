@@ -21,19 +21,20 @@
                     <!-- inner -->
                     <div class="login_fomr_inner">
                         <label for="username">Name</label>
-                        <input type="text" name="name" id="username" placeholder="Enter Your Name" required >
+                        <input type="text" name="name" id="username" placeholder="Enter Your Name" required>
                     </div>
 
                     <!-- inner -->
                     <div class="login_fomr_inner">
-                        <label for="username">Email</label>
-                        <input type="email" name="email" id="username" placeholder="Enter Your Email" required >
+                        <label for="useremail">Email</label>
+                        <input type="email" name="email" id="useremail" placeholder="Enter Your Email" required>
                     </div>
 
                     <!-- inner -->
                     <div class="login_fomr_inner">
                         <label for="Password">Password</label>
-                        <input type="password" name="password" minlength="8" id="Password" onChange="onChange()" placeholder="Enter Your Password" required>
+                        <input type="password" name="password" minlength="8" id="Password" onChange="onChange()"
+                            placeholder="Enter Your Password" required>
                         <span class="login_show"><i class="bi bi-eye-slash" id="togglePassword"></i></span>
 
                     </div>
@@ -43,7 +44,7 @@
                         <label for="Confirm">Confirm Password</label>
                         <input type="password" name="password_confirmation" minlength="8" id="Confirm"
                             onChange="onChange()" placeholder="Enter Confirm Password" required>
-                            <span class="login_show"><i class="bi bi-eye-slash" id="toggleConfirm"></i></span>
+                        <span class="login_show"><i class="bi bi-eye-slash" id="toggleConfirm"></i></span>
 
                     </div>
 
@@ -52,7 +53,8 @@
                     <div class="submit_button">
                         <input type="submit" value="Create">
                     </div><br>
-                   <div class="text-center"> Already a member? <a href="{{ route('login') }}" style="color: #ae0a46"> Login</a></div>
+                    <div class="text-center"> Already a member? <a href="{{ route('login') }}" style="color: #ae0a46">
+                            Login</a></div>
                 </form>
             </div>
         </div>

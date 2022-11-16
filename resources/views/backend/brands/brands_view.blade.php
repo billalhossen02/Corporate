@@ -17,6 +17,8 @@
 
                             </div>
                             <div class="card-body">
+                                <a href="{{ route('BrandsT') }}"><button style="float: right" class="btn btn-info">Create a
+                                        Brand</button></a>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -33,8 +35,8 @@
                                                 <tr>
                                                     <td>{{ $i++ }}</td>
                                                     <td>{{ $item->title }}</td>
-                                                    <td><img src="{{ asset('storage/Brand/' . $item->image) }}" width="20px"
-                                                            alt=""></td>
+                                                    <td><img src="{{ asset('storage/Brand/' . $item->image) }}"
+                                                            width="20px" alt=""></td>
                                                     <td>
                                                         <a href="{{ url('edit/brand/' . $item->id) }}"><button
                                                                 class="btn-sm btn-warning"><i

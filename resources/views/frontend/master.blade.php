@@ -14,7 +14,9 @@
 
 <body class="p-0 m-0">
 
-    @yield('content')
+    <div style="margin-top:130px">
+        @yield('content')
+    </div>
 
     <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
 
@@ -25,6 +27,8 @@
     <div>
         @include('frontend.client.feedback')
     </div>
+
+    {{ \TawkTo::widgetCode() }}
 
 </body>
 

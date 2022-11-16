@@ -14,13 +14,20 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\SuccessController;
+use App\Http\Controllers\SupportController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\SolutionController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\PageBuilderController;
 use App\Http\Controllers\HomePageBuilderController;
 use App\Http\Controllers\CategoryPageBuilderController;
+
+
+
+
 
 
 
@@ -35,11 +42,19 @@ Route::get('/modal/{id}', [HomeController::class, 'modal'])->name('modal');
 Route::get('/product/filter', [HomeController::class, 'filter'])->name('filter');
 Route::get('/shop.html', [HomeController::class, 'shop_html'])->name('shop.html');
 Route::get('/partner.html', [HomeController::class, 'partner'])->name('partner');
-Route::get('/newsletter', [HomeController::class, 'newsletter'])->name('newsletter');
 Route::get('/about.html', [HomeController::class, 'about'])->name('about');
 Route::get('/techdeal.html', [HomeController::class, 'tech'])->name('tech');
+Route::get('account_benefits', [HomeController::class, 'accountBenefits']);
+Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('/contact/location', [HomeController::class, 'location']);
+Route::post('/feedback/save', [FeedbackController::class, 'feedback'])->name('feedback.save');
+Route::get('support', [SupportController::class, 'support']);
+Route::post('add/support', [SupportController::class, 'addSupport'])->name('add.support');
 
 // Route::get('/blog/show',[BlogController::class,'show']);
+
+Route::get('/newsletter', [NewsletterController::class, 'newsletter']);
+Route::post('/newsletter', [NewsletterController::class, 'addNewsletter'])->name('newsletter');
 
 
 
@@ -172,7 +187,7 @@ Route::get('pagebuilder/brand/delete/{id}', [PageBuilderController::class, 'bran
 
 Route::get('pagebuilder/home', [HomePageBuilderController::class, 'home']);
 Route::post('pagebuilder/home', [HomePageBuilderController::class, 'addPageHome'])->name('addPageHome');
-Route::get('pagebuilder/home/{id}',[HomePageBuilderController::class,'delete']);
+Route::get('pagebuilder/home/{id}', [HomePageBuilderController::class, 'delete']);
 
 
 //Page Builder Category
@@ -183,15 +198,11 @@ Route::get('category.html/{category}', [HomeController::class, 'category'])->nam
 Route::get('pagebuilder/category/delete/{id}', [CategoryPageBuilderController::class, 'categoryDelete']);
 
 
-
-Route::get('client/dashboard', [ClientController::class, 'dashboard']);
+//User Dashboard
+Route::get('user/dashboard', [ClientController::class, 'dashboard']);
 Route::get('order/track', [ClientController::class, 'track']);
-
-
-Route::get('/contact', [HomeController::class, 'contact']);
-Route::get('/contact/location', [HomeController::class, 'location']);
-
-
+Route::get('user/profile', [ClientController::class, 'profile']);
+Route::get('user/product', [ClientController::class, 'product']);
 
 //error
 
@@ -217,7 +228,7 @@ Route::get('tech_glossary', function () {
     return view('frontend.footer.tech_glossary');
 });
 Route::get('/allsoftware_template', function () {
-    return view('frontend.product.allsoftware_template');
+    return view('frontend.product.allsoftware');
 });
 Route::get('/common_hardware_shop', function () {
     return view('frontend.common_hardware.common_hardware');
@@ -231,6 +242,12 @@ Route::get('/service', function () {
 Route::get('/single_solution', function () {
     return view('frontend.blogs.single_solution');
 });
+Route::get('/knowledge', function () {
+    return view('frontend.footer.knowledge');
+});
+// Route::get('/test', function () {
+//     return view('frontend.emails.newProduct');
+// });
 
 
 Route::get('/industryall', [IndustryController::class, 'view_industries'])->name('view_industries');
@@ -271,5 +288,3 @@ Route::get('/successes/edit/{success}', [SuccessController::class, 'edit_success
 Route::put('successes/{success}', [SuccessController::class, 'update_success']);
 //Single Success
 Route::get('/Successes/{Success}', [SuccessController::class, 'show_success'])->name('show_success');
-
-

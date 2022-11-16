@@ -1,32 +1,59 @@
+/*================///User Dashboard page ///==============*/
+
+var lastState = false;
+
+function userDashboardSidebarClicked() {
+    if (lastState) {
+        //open
+        lastState = false
+        document.getElementById("mySidebar").style.width = "320px";
+        document.getElementById("Content_Wrapper").style.marginLeft = "320px";
+        document.getElementById("userSideButton_wrapper").style.display = "none";
+    } else {
+        //close
+        lastState = true
+        document.getElementById("mySidebar").style.width = "0px";
+        document.getElementById("Content_Wrapper").style.marginLeft = "0px";
+        document.getElementById("userSideButton_wrapper").style.display = "block";
+    }
+}
+
 /*================///Feedback page ///==============*/
 //feedback open or close
 var lastState = false;
 
 function feedbackButtonClicked() {
-if (!lastState) {
-    //open
-    lastState = true
-    document.getElementById("feedback_Sidebar").style.cssText = "width: 380px; right:0px;";
-    document.getElementById("feedback_btn").style.marginLeft = "380px";
-    document.getElementById("sidebarButton_fb").style.right = "332px";
-} else {
-    //close
-    lastState = false
-    document.getElementById("feedback_Sidebar").style.cssText = "width: 0px; right:-18px;";
-    document.getElementById("feedback_btn").style.marginLeft = "0px";
-    document.getElementById("sidebarButton_fb").style.right = "-40px";
-}
+    if (!lastState) {
+        //open
+        lastState = true
+        document.getElementById("feedback_Sidebar").style.cssText = "width: 380px; right:2px; z-index:1030";
+        document.getElementById("feedback_btn").style.marginLeft = "380px";
+        document.getElementById("sidebarButton_fb").style.right = "336px";
+    } else {
+        //close
+        lastState = false
+        document.getElementById("feedback_Sidebar").style.cssText = "width: 0px; right:-18px;";
+        document.getElementById("feedback_btn").style.marginLeft = "0px";
+        document.getElementById("sidebarButton_fb").style.right = "-40px";
+    }
 }
 //-----feedback Details Btn
 function feedbackVisible() {
-if (document.getElementById('feedback').style.display == 'none') {
-    document.getElementById('feedback').style.display = 'flex';
-    document.getElementById('feedback_details').style.display = 'none';
+    if (document.getElementById('feedback').style.display == 'none') {
+        document.getElementById('feedback').style.display = 'flex';
+        document.getElementById('feedback_details').style.display = 'none';
+    } else {
+        document.getElementById('feedback').style.display = 'none';
+        document.getElementById('feedback_details').style.display = 'block';
+    }
 }
-else {
-    document.getElementById('feedback').style.display = 'none';
-    document.getElementById('feedback_details').style.display = 'block';
-}
+
+function onlyOne(checkbox) {
+    console.log('work');
+    var checkboxes = document.getElementsByName('star')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
 }
 /*================///Feedback End ///==============*/
 
@@ -43,6 +70,7 @@ function myCheckboxbtn() {
         btn.style.display = "none";
     }
 }
+
 function myCheckboxbtn1() {
     var checkBox = document.getElementById("myCheckboxbtn1");
     var btn = document.getElementById("btn_show");
@@ -52,6 +80,7 @@ function myCheckboxbtn1() {
         btn.style.display = "none";
     }
 }
+
 function myCheckboxbtn2() {
     var checkBox = document.getElementById("myCheckboxbtn2");
     var btn = document.getElementById("btn_show");
@@ -66,8 +95,7 @@ function switchVisible() {
     if (document.getElementById('Cookies').style.display == 'none') {
         document.getElementById('Cookies').style.display = 'flex';
         document.getElementById('Cookies_details').style.display = 'none';
-    }
-    else {
+    } else {
         document.getElementById('Cookies').style.display = 'none';
         document.getElementById('Cookies_details').style.display = 'block';
     }
@@ -77,15 +105,15 @@ var coll = document.getElementsByClassName("collapsible");
 var i;
 
 for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("actives");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
+    coll[i].addEventListener("click", function () {
+        this.classList.toggle("actives");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
 }
 
 
@@ -191,7 +219,7 @@ $(".toggle").on("click", function(e){
 */
 //-------------
 
-$('#click_advance').click(function() {
+$('#click_advance').click(function () {
     $('#display_advance').toggle('1000');
     $("i", this).toggleClass("fa-solid fa-chevron-left fa-solid fa-align-left");
 });

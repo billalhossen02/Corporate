@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Brand;
 use App\Models\Product;
+use App\Mail\newProduct;
 use App\Models\Category;
 use App\Models\Industry;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Console\Scheduling\Schedule;
 
 class BackendController extends Controller
 {
@@ -39,7 +43,7 @@ class BackendController extends Controller
             ->get();
         return view('backend.products.product_create', compact('categories', 'brands', 'industries'));
     }
-    public function addProduct(Request $request)
+    public function addProduct(Request $request, Schedule $schedule)
     {
         $data = new Product();
         $data->title = $request->title;
@@ -58,6 +62,11 @@ class BackendController extends Controller
         $data->industry = $request->industry;
 
         $data->save();
+
+        $users = User::all();
+        // foreach ($users as $user) {
+        Mail::to('dev1.ngenit@gmail.com')->send(new newProduct());
+        // }
 
         return redirect()->route('products');
     }

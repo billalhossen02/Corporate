@@ -11,21 +11,24 @@ use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
-  public function index(){
-   $data = DB::table('widget1')->get();
-   return view('backend.widget1.widget1_view',['data' => $data]);
+  public function index()
+  {
+    $data = DB::table('widget1')->get();
+    return view('backend.widget1.widget1_view', ['data' => $data]);
   }
-  public function add(){
+  public function add()
+  {
     $data = Client::all();
     $data1 = DB::table('widget1')->get();
-    return view('backend.widget1.widget1_create',['data' => $data,'data1' => $data1]);
+    return view('backend.widget1.widget1_create', ['data' => $data, 'data1' => $data1]);
   }
-  public function addWidget(Request $request){
+  public function addWidget(Request $request)
+  {
     $id = $request->id;
-    $data = Client::where('title',$request->title)->get();
-    $data1 = DB::table('widget1')->where('id',$id)->get();
-    if(!$data1 == null )
-      DB::table('widget1')->where('id',$id)->update([
+    $data = Client::where('title', $request->title)->get();
+    $data1 = DB::table('widget1')->where('id', $id)->get();
+    if (!$data1 == null)
+      DB::table('widget1')->where('id', $id)->update([
         'title' => $data[0]->title,
         'image' => $data[0]->image,
         'description' => $data[0]->description,
@@ -33,21 +36,23 @@ class ClientController extends Controller
         'updated_at' => Carbon::now()
       ]);
     else
-    DB::table('widget1')->insert([
-      'id' => $id,
-      'title' => $data[0]->title,
-      'image' => $data[0]->image,
-      'description' => $data[0]->description,
-      'created_at' => Carbon::now(),
-      'updated_at' => Carbon::now()
-    ]);
+      DB::table('widget1')->insert([
+        'id' => $id,
+        'title' => $data[0]->title,
+        'image' => $data[0]->image,
+        'description' => $data[0]->description,
+        'created_at' => Carbon::now(),
+        'updated_at' => Carbon::now()
+      ]);
 
     return redirect()->back();
   }
-  public function clientT(){
-  return view('backend.client_experience.create');
+  public function clientT()
+  {
+    return view('backend.client_experience.create');
   }
-  public function clientE(Request $request){
+  public function clientE(Request $request)
+  {
     $image = $request->image;
     $imageName = time() . '.' . $image->extension();
     $image->storeAs('Client', $imageName);
@@ -58,17 +63,27 @@ class ClientController extends Controller
       'created_at' => Carbon::now(),
       'updated_at' => Carbon::now()
     ]);
-   return redirect()->route('admin');
+    return redirect()->route('admin');
   }
-  public function dashboard(){
+  public function dashboard()
+  {
     return view('frontend.client.dashboard');
   }
-  public function track(){
-    if(Auth::check()){
-    $orders = Order::with('orderDetails')->where('user_id',Auth::user()->id)->get();
-    return view('frontend.client.track',compact('orders'));
+  public function track()
+  {
+    if (Auth::check()) {
+      $orders = Order::with('orderDetails')->where('user_id', Auth::user()->id)->get();
+      return view('frontend.client.track', compact('orders'));
     }
     $orders = null;
-    return view('frontend.client.track',compact('orders'));
+    return view('frontend.client.track', compact('orders'));
+  }
+  public function profile()
+  {
+    return view('frontend.client.profile');
+  }
+  public function product()
+  {
+    return view('frontend.client.product');
   }
 }

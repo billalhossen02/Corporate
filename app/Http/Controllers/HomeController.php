@@ -15,6 +15,7 @@ use App\Models\HomePageBuilder;
 use Illuminate\Support\Facades\DB;
 use App\Models\CategoryPageBuilder;
 use App\Http\Controllers\Controller;
+use App\Models\Feedback;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -131,9 +132,9 @@ class HomeController extends Controller
     }
     public function hardware($brand)
     {
-        $solution = PageBuilder::where('brand', $brand)->with('section1', 'section2', 'section3', 'section4', 'sec1', 'sec2', 'sec3', 'sec4')->first();
+        $solution = PageBuilder::where('brand', $brand)->with('section1', 'section2', 'section3', 'section4', 'sec1', 'sec2', 'sec3', 'sec4')->firstOrFail();
         $products = Product::where('brand', $brand)->inRandomOrder()->get();
-        $brand = Brand::where('title', $brand)->first();
+        $brand = Brand::where('title', $brand)->firstOrFail();
         return view('frontend.product.hardware', ['solution' => $solution, 'brand' => $brand, 'products' => $products]);
     }
     public function modal($id)
@@ -449,12 +450,8 @@ class HomeController extends Controller
     {
         $featuredCables = Product::where('sub_category', 'Cables')->get();
         $brands = Brand::all();
-        $data = CategoryPageBuilder::where('category', $category)->with('cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'cat6', 'cat7', 'cat8', 'cat9', 'cat10', 'cat11', 'cat12', 'cat13', 'cat14', 'cat15', 'cat16', 'cat17', 'cat18', 'cat19', 'cat20')->first();
+        $data = CategoryPageBuilder::where('category', $category)->with('cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'cat6', 'cat7', 'cat8', 'cat9', 'cat10', 'cat11', 'cat12', 'cat13', 'cat14', 'cat15', 'cat16', 'cat17', 'cat18', 'cat19', 'cat20')->firstOrFail();
         return view('frontend.category.category', ['data' => $data, 'brands' => $brands, 'featuredCables' => $featuredCables]);
-    }
-    public function newsletter()
-    {
-        return view('frontend.newsletter.newsletter');
     }
     public function about()
     {
@@ -466,5 +463,9 @@ class HomeController extends Controller
         $refurbished = Product::where('product_type', 'refurbished')->get();
         $categories = Category::groupBy('sub_category')->get();
         return view('frontend.tech.deal', compact('techDeal', 'categories', 'refurbished'));
+    }
+    public function accountBenefits()
+    {
+        return view('frontend.client.account_benefits');
     }
 }

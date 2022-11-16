@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class CartController extends Controller
@@ -69,6 +71,8 @@ class CartController extends Controller
     public function checkout()
     {
         $cartItems = \Cart::getContent();
-        return view('frontend.cart.checkout', ['cartItems' => $cartItems]);
+        $id = Auth::user()->id;
+        $user = User::with('userInfo')->find($id);
+        return view('frontend.cart.checkout', ['cartItems' => $cartItems, 'user' => $user]);
     }
 }
